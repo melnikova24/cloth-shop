@@ -1,6 +1,7 @@
 .nav {
   background: #ece8dd;
   position: fixed;
+  z-index: 101;
   width: 100%;
 
   &-logo {

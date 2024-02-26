@@ -57,6 +57,14 @@ a {
   font-family: "Ubuntu", sans-serif;
 }
 
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
 body {
   background: #ece8dd;
 }
