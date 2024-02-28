@@ -1,4 +1,4 @@
-import mongoose, {model, mongo} from 'mongoose';
+import mongoose, {model} from 'mongoose';
 
 const userModel = new mongoose.Schema({
     name: { type: String, required: true, min: 2, max: 30 },
