@@ -10,7 +10,7 @@ const categoryModel = new mongoose.Schema({
 categoryModel.pre('findOneAndDelete', async function (next) {
     const categoryId = this.getQuery()._id;
     try {
-        await productModelM.deleteMany({ category: categoryId });
+        await productModelM.deleteMany({ categoryId: categoryId });
         next();
     } catch (error) {
         next(error);

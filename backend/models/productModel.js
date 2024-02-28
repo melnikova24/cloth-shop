@@ -7,9 +7,8 @@ const VariantSchema = new mongoose.Schema({
     price: { type: Number, required: true }
 });
 
-
 const productModel = new mongoose.Schema({
-    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category" , required: true },
     name: { type: String, required: true, min: 2, max: 80 },
     description: { type: String },
     variants: [VariantSchema]
