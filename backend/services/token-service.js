@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import {tokenModelM} from '../models/tokenModel';
+import {tokenModelM} from "../models/tokenModel.js";
 
 export function  generateTokens(payload) {
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, { expiresIn: '1h' });
@@ -24,6 +24,7 @@ export async function saveToken(userId, refreshToken) {
     }
 
     const token = await tokenModelM.create({ user: userId, refreshToken });
+    await token.save();
 
     return token;
 }

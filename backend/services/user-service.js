@@ -1,13 +1,13 @@
-import {userModelM} from "../models/userModel";
+import {userModelM} from "../models/userModel.js";
 import {compare, hash} from "bcrypt";
-import {generateTokens, saveToken, validateRefreshToken, findToken} from "./token-service";
-import {ApiError} from "../utils/api-error";
-import {tokenModelM} from "../models/tokenModel";
+import {generateTokens, saveToken, validateRefreshToken, findToken} from "./token-service.js";
+import {ApiError} from "../utils/api-error.js";
+import {tokenModelM} from "../models/tokenModel.js";
 import {UserDTO} from "../dtos/user-dto.js";
 
 
 
-export async function register ({email, password, name, surname}) {
+export async function register ({email, password, name}) {
     const candidate = await userModelM.findOne({ email });
 
     if (candidate) {
