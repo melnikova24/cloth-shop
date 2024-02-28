@@ -78,3 +78,8 @@ export async function refresh (refreshToken) {
     await saveToken(userDTO._id.toString(), tokens.refreshToken);
     return { ...tokens, user: userDTO }
 }
+
+export const isAdmin = async (userId) => {
+    const user = await userModelM.findById(userId);
+    return user.role.includes('admin');
+}
