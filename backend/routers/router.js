@@ -11,7 +11,7 @@ import {
 } from "../controllers/categoryController.js";
 import {adminMiddleware} from "../middlewares/adminMiddleware.js";
 import {deleteProduct, getProduct, getProducts, patchProduct, postProduct} from "../controllers/productController.js";
-import {removeProduct} from "../services/product-service.js";
+
 
 const router = Router();
 
