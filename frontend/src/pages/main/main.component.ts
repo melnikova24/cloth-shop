@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ModalComponent} from "../../components/modal/modal.component";
+import {ProductListComponent} from "../../features/product-list/product-list.component";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, ModalComponent],
+  imports: [CommonModule, ProductListComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

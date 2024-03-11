@@ -2,6 +2,7 @@ import {APP_INITIALIZER, Injectable, Provider} from '@angular/core';
 import {BASE_URL} from "../../constants";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {StorageService} from "../../services/storage.service";
+import {Router} from "@angular/router";
 
 
 const httpOptions = {
@@ -12,9 +13,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn!: boolean;
+  isLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient, private storageService: StorageService) { }
+  constructor(private http: HttpClient, private storageService: StorageService, private router: Router) { }
 
   login(email: string, password: string) {
       return this.http.post(BASE_URL+'/login', {email, password}, httpOptions);
@@ -37,12 +38,17 @@ export class AuthService {
           next: data => {
               this.storageService.saveUser(data);
               this.isLoggedIn = true;
+              this.router.navigate(['']);
           },
           error: err => {
               this.storageService.clear();
               this.isLoggedIn = false;
           }
       })
+  }
+
+  isAdmin() {
+    return this.storageService.getUser().role.includes('admin');
   }
 }
 
