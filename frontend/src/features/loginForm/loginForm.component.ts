@@ -15,7 +15,6 @@ import {Router, RouterLink} from "@angular/router";
 })
 export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
-  isLoggedIn: boolean = false;
   isLoginFailed: boolean = false;
   errorMessage: string = '';
   role: string[] = [];
@@ -29,7 +28,7 @@ export class LoginFormComponent implements OnInit {
       next: data => {
         this.storageService.saveUser(data);
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
+        this.authService.isLoggedIn = true;
         this.role = this.storageService.getUser().role;
         this.router.navigate(['']);
       },
