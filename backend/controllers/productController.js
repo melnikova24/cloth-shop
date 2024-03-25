@@ -2,7 +2,7 @@ import {validationResult} from "express-validator";
 import {ApiError} from "../utils/api-error.js";
 import {
     createProduct,
-    editProduct,
+    editProduct, productFilters,
     receiveProduct,
     receiveProducts,
     removeProduct
@@ -34,7 +34,9 @@ export async function deleteProduct (req, res, next) {
 
 export async function getProducts (req, res, next) {
     try {
-        const products = await receiveProducts();
+        const params = req.query;
+        const products = await receiveProducts(params);
+
         return res.status(200).json(products);
     } catch (e) {
         next(e);
@@ -56,6 +58,15 @@ export async function patchProduct (req, res, next) {
         const productId = req.params.id;
         const product = await editProduct(productId, req.body);
         return res.status(200).json(product);
+    } catch (e) {
+        next(e);
+    }
+}
+
+export async function getProductFilters (req, res, next) {
+    try {
+        const filters = await productFilters();
+        return res.status(200).json(filters);
     } catch (e) {
         next(e);
     }

@@ -10,7 +10,14 @@ import {
     putCategory
 } from "../controllers/categoryController.js";
 import {adminMiddleware} from "../middlewares/adminMiddleware.js";
-import {deleteProduct, getProduct, getProducts, patchProduct, postProduct} from "../controllers/productController.js";
+import {
+    deleteProduct,
+    getProduct,
+    getProductFilters,
+    getProducts,
+    patchProduct,
+    postProduct
+} from "../controllers/productController.js";
 
 
 const router = Router();
@@ -36,6 +43,7 @@ router.delete('/categories/:id', authMiddleware, adminMiddleware, deleteCategory
 
 //Товары
 router.get('/products', getProducts);
+router.get('/products-filters', getProductFilters);
 router.get('/products/:id', getProduct);
 router.post('/products', authMiddleware, adminMiddleware, postProduct);
 router.delete('/products/:id', authMiddleware, adminMiddleware, deleteProduct);
