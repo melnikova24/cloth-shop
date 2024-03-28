@@ -18,6 +18,8 @@ import {
     patchProduct,
     postProduct
 } from "../controllers/productController.js";
+import {postCart, getCart} from "../controllers/cartController.js";
+
 
 
 const router = Router();
@@ -49,6 +51,11 @@ router.post('/products', authMiddleware, adminMiddleware, postProduct);
 router.delete('/products/:id', authMiddleware, adminMiddleware, deleteProduct);
 router.patch('/products/:id', authMiddleware, adminMiddleware, patchProduct);
 //Конец товаров
+
+//Корзина
+router.post('/cart', authMiddleware, postCart);
+router.get('/cart', authMiddleware, getCart);
+//Конец корзины
 
 
 export {router};
