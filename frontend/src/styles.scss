@@ -55,6 +55,7 @@ a {
 
 *, html, body {
   font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
 }
 
 button:focus {
@@ -68,3 +69,6 @@ input:focus {
 body {
   background: #ece8dd;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
