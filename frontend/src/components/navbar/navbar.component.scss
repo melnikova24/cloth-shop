@@ -31,7 +31,17 @@
     gap: 10px;
   }
 
-  &-icon {}
+  &-icon {
+    width: 35px;
+    filter: brightness(0) saturate(100%) invert(25%) sepia(7%) saturate(899%) hue-rotate(4deg) brightness(97%) contrast(79%);
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(60%) sepia(74%) saturate(341%) hue-rotate(316deg) brightness(87%) contrast(113%);
+    }
+  }
+
+  img {
+    cursor: pointer;
+  }
 
 }
 

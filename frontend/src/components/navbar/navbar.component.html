@@ -3,15 +3,16 @@
     <div class="nav-links">
       <img src="../../assets/logo.png" alt="logo" class="nav-logo" routerLink="">
       <span routerLink="" class="nav-link">Главная</span>
-      <span (click)="redirectToCatalog('children')" class="nav-link">Малыши</span>
-      <span (click)="redirectToCatalog('girls')" class="nav-link">Девочки</span>
-      <span (click)="redirectToCatalog('boys')" class="nav-link">Мальчики</span>
-      <span (click)="redirectToCatalog('new')" class="nav-link">NEW</span>
+      <span routerLink="catalog/children" class="nav-link">Малыши</span>
+      <span routerLink="catalog/girls" class="nav-link">Девочки</span>
+      <span routerLink="catalog/boys" class="nav-link">Мальчики</span>
+<!--      <span routerLink="catalog/new" class="nav-link">NEW</span>-->
       <span routerLink="contacts" class="nav-link">Контакты</span>
     </div>
     <div class="nav-icons">
-      <img src="../../assets/icons/favorite.svg" alt="избранное" class="nav-icon" routerLink="favorite">
+      <img src="../../assets/icons/fav.svg" alt="избранное" class="nav-icon" routerLink="favorite">
       <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="cart" >
+<!--      <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="login" >-->
       <img src="../../assets/icons/profile.svg" alt="профиль" class="nav-icon" routerLink="profile">
     </div>
   </div>
