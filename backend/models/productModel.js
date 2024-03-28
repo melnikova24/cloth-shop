@@ -10,6 +10,7 @@ const VariantSchema = new mongoose.Schema({
 
 const productModel = new mongoose.Schema({
     categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category" , required: true },
+    subTypeId: { type: mongoose.Schema.Types.ObjectId, ref: "SubType" , required: true },
     name: { type: String, required: true, min: 2, max: 80 },
     description: { type: String },
     variants: [VariantSchema]
