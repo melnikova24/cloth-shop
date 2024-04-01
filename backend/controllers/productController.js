@@ -65,7 +65,7 @@ export async function patchProduct (req, res, next) {
 
 export async function getProductFilters (req, res, next) {
     try {
-        const filters = await productFilters();
+        const filters = await productFilters(req.query);
         return res.status(200).json(filters);
     } catch (e) {
         next(e);

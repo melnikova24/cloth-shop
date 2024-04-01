@@ -75,8 +75,8 @@ export const receiveProducts = async (params) => {
     return productModelM.find(query);
 }
 
-export const productFilters = async () => {
-    const sizes = await productModelM.distinct('variants.size')
-    const colors = await productModelM.distinct('variants.color')
+export const productFilters = async (params) => {
+    const sizes = await productModelM.find({ subTypeId: params.subTypeId }).distinct('variants.size')
+    const colors = await productModelM.find({ subTypeId: params.subTypeId }).distinct('variants.color')
     return {sizes, colors}
 }

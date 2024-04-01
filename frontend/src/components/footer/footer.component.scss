@@ -1,0 +1,41 @@
+.footer {
+  padding: 30px 0;
+  background-color: #d3cdb6;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 17px;
+  }
+
+  &-link {
+    color: #514d44;
+    transition: all .35s;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      color: #e98074;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+
