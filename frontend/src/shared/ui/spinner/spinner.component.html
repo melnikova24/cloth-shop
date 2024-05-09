@@ -1,4 +1,10 @@
 
-<div *ngIf="this.loaderService.getLoading()" class="cssload-container">
-  <span class="loader" ></span>
-</div>
+@if (this.loaderService.getLoading()) {
+  <div class="cssload-container">
+    <!--    <span class="loader" ></span>-->
+    <div class="load">
+      <img src="assets/racoon-pedro.gif" alt="" >
+      <audio src="assets/pedro-snd.mp3" autoplay></audio>
+    </div>
+  </div>
+}
