@@ -1,13 +1,16 @@
 import {productModelM} from "../models/productModel.js";
+import {categoryModelM} from "../models/categoryModel.js";
+import {subTypeModelM} from "../models/subType.js";
 
-export const createProduct = async ({ categoryId, name, description, variants }) => {
-    const product = await productModelM.create({ categoryId, name, description, variants });
+export const createProduct = async ({ categoryId, name, description, variants, subTypeId }) => {
+    console.log({ categoryId, name, description, variants, subTypeId })
+    const product = await productModelM.create({ categoryId, name, description, variants, subTypeId });
     product.save();
     return product;
 }
 
-export const editProduct = async (id, { categoryId, name, description, variants }) => {
-    const product = await productModelM.findByIdAndUpdate(id, { categoryId, name, description, variants }, { new: true });
+export const editProduct = async (id, { categoryId, name, description, variants, subTypeId }) => {
+    const product = await productModelM.findByIdAndUpdate(id, { categoryId, subTypeId, name, description, variants }, { new: true });
     return product;
 }
 
@@ -71,8 +74,16 @@ export const receiveProducts = async (params) => {
     if (params.subTypeId) {
         query.subTypeId = params.subTypeId
     }
+    const categories = await categoryModelM.find()
+    const subtypes = await subTypeModelM.find()
+    const products = await productModelM.find(query)
+    const productsWithCategories = products.map(product => {
+        const category = categories.find(category => category._id.toString() === product.categoryId.toString())
+        const subType = subtypes.find(subType => subType._id.toString() === product.subTypeId.toString())
+        return {...product.toObject(), category, subType}
+    })
 
-    return productModelM.find(query);
+    return productsWithCategories;
 }
 
 export const productFilters = async (params) => {

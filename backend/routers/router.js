@@ -19,6 +19,7 @@ import {
     postProduct
 } from "../controllers/productController.js";
 import {postCart, getCart} from "../controllers/cartController.js";
+import {getSubtypes} from "../controllers/subtypeController.js";
 
 
 
@@ -57,5 +58,8 @@ router.post('/cart', authMiddleware, postCart);
 router.get('/cart', authMiddleware, getCart);
 //Конец корзины
 
+//Тип одежды
+router.get('/subtypes', getSubtypes);
+//Тип одежды
 
 export {router};

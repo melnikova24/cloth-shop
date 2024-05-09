@@ -17,7 +17,6 @@ export function verifyToken(token, secret) {
 
 export async function saveToken(userId, refreshToken) {
     const tokenData = await tokenModelM.findOne({ user: userId });
-
     if (tokenData) {
         tokenData.refreshToken = refreshToken;
         return tokenData.save();
@@ -25,7 +24,6 @@ export async function saveToken(userId, refreshToken) {
 
     const token = await tokenModelM.create({ user: userId, refreshToken });
     await token.save();
-
     return token;
 }
 
