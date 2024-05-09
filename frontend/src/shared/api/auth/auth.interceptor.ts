@@ -31,12 +31,14 @@ export class AuthInterceptor implements HttpInterceptor {
         withCredentials: true
       });
     }
-
+    const from = req.url.split('?')[1]
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-
         if (error.status === 401) {
-          this.router.navigate(['/login']);
+          if (from && from?.slice(-4) !== 'main') {
+            this.router.navigate(['/login']);
+          }
+          if (req.method === 'POST' ) this.router.navigate(['/login']);
         }
         return throwError(error);
       })
