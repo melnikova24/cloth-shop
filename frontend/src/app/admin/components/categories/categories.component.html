@@ -1,0 +1,58 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Название</th>
+    <th scope="col">Тип</th>
+    <th scope="col">Описание</th>
+    <th scope="col">
+      <div style="display: flex; justify-content: space-between;">
+        <span>Действия</span>
+        <button class="btn2" (click)="open(content)">Добавить</button>
+      </div>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let category of categories;">
+    <td>{{ category._id }}</td>
+    <td>{{ category.name}}</td>
+    <td>{{ category.subType?.name}}</td>
+    <td>{{ category.description }}</td>
+    <td class="overflow-hidden">
+      <div ngbDropdown container="body" >
+        <button type="button" class="btn btn-outline-primary btn-sm btn2" ngbDropdownToggle>Действия</button>
+        <div ngbDropdownMenu>
+          <button ngbDropdownItem>Редактировать</button>
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem (click)="deleteCategory(category)">Удалить</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Добавление</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <app-category-form (getCategories)="getCategories()"></app-category-form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
+  </div>
+</ng-template>
+<!--<ng-template #editcontent let-modal>-->
+<!--  <div class="modal-header">-->
+<!--    <h4 class="modal-title" id="modal-basic-title2">Редактирование</h4>-->
+<!--    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    <app-product-edit-form [product]="selectedProduct"></app-product-edit-form>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>-->
+<!--  </div>-->
+<!--</ng-template>-->

@@ -1,0 +1,143 @@
+
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input[type="text"] {
+    //border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+  }
+
+  &-variants {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  margin-top: 10px;
+
+  &-item {
+    margin-top: 8px;
+    width: 100px;
+    position: relative;
+    img:nth-child(1) {
+      width: 100px;
+    }
+    img:nth-child(2) {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      filter: brightness(0) saturate(100%) invert(67%) sepia(34%) saturate(2433%) hue-rotate(314deg) brightness(102%) contrast(83%);
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.col {
+  .d-inline-block {
+    width: 100%;
+    text-align: left;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .btn {
+    color: #7c7769;
+    background-color: transparent;
+    border-color: #7c7769;
+  }
+
+  .btn:hover {
+    color: #7c7769;
+    background-color: #c0b8a3;
+    border-color: #7c7769;
+  }
+
+  .dropdown-item {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+.add-btn {
+  background: #c8c1a5;
+  border-radius: 11px;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  transition: all .35s;
+  color: #514d44;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 15px auto 0;
+
+  &:hover {
+    background: #96917b;
+  }
+
+  &:focus {
+    background: #96917b;
+    outline: none;
+  }
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-variant-remove, .custom-file-upload {
+  background: #c8c1a5;
+  border-radius: 11px;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  transition: all .35s;
+  color: #514d44;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 15px auto 0;
+
+  &:hover {
+    background: #96917b;
+  }
+
+  &:focus {
+    background: #96917b;
+    outline: none;
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+//.custom-file-upload {
+//  border: 1px solid #ccc;
+//  display: inline-block;
+//  padding: 6px 12px;
+//  cursor: pointer;
+//}
