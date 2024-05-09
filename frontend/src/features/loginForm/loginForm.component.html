@@ -2,14 +2,18 @@
 <form class="login" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
   <span class="login-label">Почта</span>
   <input type="text" class="login-input" formControlName="email">
-  <div *ngIf="f('email')?.invalid && f('email')?.touched" class="login-invalid-feedback">
-    Некорректный адрес почты
-  </div>
+  @if (f('email')?.invalid && f('email')?.touched) {
+    <div class="login-invalid-feedback">
+      Некорректный адрес почты
+    </div>
+  }
   <span class="login-label">Пароль</span>
   <input type="password" class="login-input" formControlName="password">
-  <div *ngIf="f('password')?.invalid && f('password')?.touched" class="login-invalid-feedback">
-    Пароль должен состоять из более 8 символов
-  </div>
+  @if (f('password')?.invalid && f('password')?.touched) {
+    <div class="login-invalid-feedback">
+      Пароль должен состоять из более 8 символов
+    </div>
+  }
   <span class="login-label">Нет аккаунта? <span routerLink="/register">Регистрация</span></span>
   <button class="login-btn" [disabled]="loginForm.invalid">Войти</button>
 </form>

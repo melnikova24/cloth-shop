@@ -3,6 +3,7 @@ import {BASE_URL} from "../../constants";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {StorageService} from "../../services/storage.service";
 import {Router} from "@angular/router";
+import {delay} from "rxjs";
 
 
 const httpOptions = {
@@ -46,9 +47,9 @@ export class AuthService {
           }
       })
   }
-
+  /**Функция для проверки роли пользователя*/
   isAdmin() {
-    return this.storageService.getUser().role.includes('admin');
+    return this.storageService.getUser().user.role.includes('admin');
   }
 }
 

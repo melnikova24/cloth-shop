@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalComponent} from "../../components/modal/modal.component";
 import {AuthService} from "../../shared/api/auth";
 import {StorageService} from "../../shared/services/storage.service";
 import {Router, RouterLink} from "@angular/router";
+import {delay} from "rxjs";
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [CommonModule, ModalComponent, ReactiveFormsModule, RouterLink],
+  imports: [ModalComponent, ReactiveFormsModule, RouterLink],
   templateUrl: './loginForm.component.html',
   styleUrl: './loginForm.component.scss'
 })
