@@ -23,7 +23,7 @@ export class CategoriesService {
     return this.http.patch(BASE_URL+'/categories/'+category._id, category)
   }
 
-  deleteCategory = (id: number) => {
+  deleteCategory = (id: string) => {
     return this.http.delete(BASE_URL+'/categories/'+id)
   }
 }
