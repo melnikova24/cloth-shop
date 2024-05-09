@@ -1,0 +1,54 @@
+<aside class="sidebar">
+<!--  <span class="sidebar-title">Фильтры</span>-->
+  <form class="sidebar-filters" [formGroup]="filtersForm" (ngSubmit)="submitFilters()">
+    <div class="sidebar-item">
+      <span class="sidebar-subtitle">Цена</span>
+      <div class="flex">
+        <input type="text" class="sidebar-input" formControlName="minPrice" (input)="removeLeadingZeros()">
+        <span>-</span>
+        <input type="text" class="sidebar-input" formControlName="maxPrice" (input)="removeLeadingZeros()">
+      </div>
+    </div>
+    <div class="sidebar-item">
+      <span class="sidebar-subtitle">Категория</span>
+      <div class="sidebar-filter" *ngFor="let category of categories" >
+        <app-checkbox
+          [value]="category._id"
+          [groupName]="'category'"
+          (onChanged)="disableCheckboxes(category._id, 'category')"
+          formControlName="categoryId">
+        </app-checkbox>
+        <span class="sidebar-filtername">{{ category.name }}</span>
+      </div>
+    </div>
+    <div class="sidebar-item">
+      <span class="sidebar-subtitle">Размеры</span>
+      @for (size of filters.sizes; track size) {
+        <div class="sidebar-filter" >
+          <app-checkbox
+            [value]="size"
+            [groupName]="'sizes'"
+            (onChanged)="disableCheckboxes(size, 'sizes')"
+            formControlName="sizes">
+          </app-checkbox>
+          <span class="sidebar-filtername">{{ size }}</span>
+        </div>
+      }
+    </div>
+    <div class="sidebar-item">
+      <span class="sidebar-subtitle">Цвет</span>
+      @for (color of filters.colors; track color) {
+        <div class="sidebar-filter" >
+          <app-checkbox
+            [value]="color"
+            [groupName]="'colors'"
+            (onChanged)="disableCheckboxes(color, 'colors')"
+            formControlName="colors">
+          </app-checkbox>
+          <span class="sidebar-filtername">{{ color }}</span>
+        </div>
+      }
+    </div>
+    <button type="button" class="sidebar-btn" (click)="submitFilters()">Применить</button>
+  </form>
+</aside>

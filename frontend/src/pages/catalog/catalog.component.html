@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <app-sidebar></app-sidebar>
-    <app-product-list></app-product-list>
+    <app-sidebar (updateProducts)="updateProducts($event)"></app-sidebar>
+    <app-product-list [products]="products"></app-product-list>
   </div>
 </section>

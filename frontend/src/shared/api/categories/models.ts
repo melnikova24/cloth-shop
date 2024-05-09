@@ -1,7 +1,7 @@
 import {ISubtype} from "../subtypes";
 
 export interface ICategory {
-  _id: number;
+  _id: string;
   name: string;
   photo: string;
   description: string;
