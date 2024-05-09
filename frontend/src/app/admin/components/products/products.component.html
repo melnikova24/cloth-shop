@@ -1,0 +1,114 @@
+
+<div class="main-center">
+  <form class="main-sidebar">
+    <span class="main-sidebar-title">Фильтры</span>
+    <div class="main-filters">
+      <span class="main-filters-subtitle">Поиск</span>
+      <input type="text" class="main-filters-search">
+      <span class="main-filters-subtitle">Категория</span>
+      <div class="main-filters-categories">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                Категория
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button type="button" ngbDropdownItem *ngFor="let category of categories | async">{{category.name}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="main-filters-subtitle">Размеры</span>
+      <div class="main-filters-categories">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>
+                Размер
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                <button type="button" ngbDropdownItem *ngFor="let size of sizes">{{size}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="main-filters-subtitle">Цвет</span>
+      <div class="main-filters-categories">
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic3" ngbDropdownToggle>
+                Цвет
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                <button type="button" ngbDropdownItem *ngFor="let color of colors">{{color}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="main-filters-apply" type="submit">Применить</button>
+    </div>
+  </form>
+  <div class="main-content">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Тип</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Цена</th>
+        <th scope="col"><div style="display: flex; justify-content: space-between;"><span>Действия</span><button class="btn2"  (click)="open(content)">Добавить</button></div></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products;">
+          <td>{{product._id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.subType?.name}}</td>
+          <td>{{product.category?.name}}</td>
+          <td>{{product.variants[0]?.price}}</td>
+          <td class="overflow-hidden">
+            <div ngbDropdown container="body">
+              <button type="button" class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Действия</button>
+              <div ngbDropdownMenu>
+                <button ngbDropdownItem (click)="open(editcontent, product)">Редактировать</button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem (click)="deleteProduct(product)">Удалить</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Добавление</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <app-product-form (getProducts)="getProducts()"></app-product-form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
+  </div>
+</ng-template>
+<ng-template #editcontent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Редактирование</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <app-product-edit-form [product]="selectedProduct"></app-product-edit-form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
+  </div>
+</ng-template>
+

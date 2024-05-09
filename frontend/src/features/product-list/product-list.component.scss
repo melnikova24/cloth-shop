@@ -1,0 +1,45 @@
+.products {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+
+  .product {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ece8dd;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      height: 350px;
+      //height: 260px;
+      object-fit: cover;
+    }
+
+    &-name {
+      width: 100%;
+      height: 20px;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 300;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      overflow: hidden;
+    }
+
+    &-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-price {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}
