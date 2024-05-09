@@ -25,8 +25,9 @@ export const receiveProduct = async (id) => {
 }
 
 export const receiveProducts = async (params) => {
+    console.log(params, 'params')
     const query = {}
-    if (params.categoryId) {
+    if (params.categoryId && params.categoryId !== 'null') {
         query.categoryId = params.categoryId
     }
     if (params.minPrice || params.maxPrice) {
@@ -47,7 +48,7 @@ export const receiveProducts = async (params) => {
             };
         }
     }
-    if (params.sizes) {
+    if (params.sizes && params.sizes !== 'null') {
         query.variants = {
             $elemMatch: {
                 size: {
@@ -56,13 +57,13 @@ export const receiveProducts = async (params) => {
             }
         }
     }
-    if (params.name) {
+    if (params.name && params.name !== 'null') {
         query.name = {
             $regex: params.name,
             $options: 'i'
         }
     }
-    if (params.colors) {
+    if (params.colors && params.colors !== 'null') {
         query.variants = {
             $elemMatch: {
                 color: {
@@ -71,7 +72,7 @@ export const receiveProducts = async (params) => {
             }
         }
     }
-    if (params.subTypeId) {
+    if (params.subTypeId && params.subTypeId !== 'null') {
         query.subTypeId = params.subTypeId
     }
     const categories = await categoryModelM.find()
@@ -90,4 +91,9 @@ export const productFilters = async (params) => {
     const sizes = await productModelM.find({ subTypeId: params.subTypeId }).distinct('variants.size')
     const colors = await productModelM.find({ subTypeId: params.subTypeId }).distinct('variants.color')
     return {sizes, colors}
+}
+
+export const latestItems = async () => {
+    const products = await productModelM.find().sort({createdAt: -1}).limit(4)
+    return products
 }

@@ -14,7 +14,7 @@ import {
     deleteProduct,
     getProduct,
     getProductFilters,
-    getProducts,
+    getProducts, getProductsByCategory,
     patchProduct,
     postProduct
 } from "../controllers/productController.js";
@@ -51,6 +51,7 @@ router.get('/products/:id', getProduct);
 router.post('/products', authMiddleware, adminMiddleware, postProduct);
 router.delete('/products/:id', authMiddleware, adminMiddleware, deleteProduct);
 router.patch('/products/:id', authMiddleware, adminMiddleware, patchProduct);
+router.get('/latest', getProductsByCategory);
 //Конец товаров
 
 //Корзина

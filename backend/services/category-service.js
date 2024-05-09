@@ -42,3 +42,4 @@ export const receiveCategories = async (subTypeId) => {
         }
     });
 }
+

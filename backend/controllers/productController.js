@@ -5,7 +5,8 @@ import {
     editProduct, productFilters,
     receiveProduct,
     receiveProducts,
-    removeProduct
+    removeProduct,
+    latestItems
 } from "../services/product-service.js";
 
 
@@ -70,6 +71,15 @@ export async function getProductFilters (req, res, next) {
     try {
         const filters = await productFilters(req.query);
         return res.status(200).json(filters);
+    } catch (e) {
+        next(e);
+    }
+}
+
+export async function getProductsByCategory (req, res, next) {
+    try {
+        const products = await latestItems();
+        return  res.status(200).json(products);
     } catch (e) {
         next(e);
     }
