@@ -21,7 +21,6 @@ export class ProductsService {
       }
     }
 
-    console.log(params, 'params')
     return this.http.get<Product[]>(BASE_URL + '/products', { params: params });
   }
 
@@ -41,7 +40,11 @@ export class ProductsService {
     return this.http.patch(BASE_URL+'/products/'+product._id, product)
   }
 
-  deleteProduct = (id: number) => {
+  deleteProduct = (id: string) => {
     return this.http.delete(BASE_URL+'/products/'+id)
+  }
+
+  getLatestProducts = () => {
+    return this.http.get<Product[]>(BASE_URL+'/latest')
   }
 }

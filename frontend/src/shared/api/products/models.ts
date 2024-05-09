@@ -10,7 +10,7 @@ export type VariantProduct = {
 }
 
 export type Product = {
-  _id: number
+  _id: string
   name: string
   description: string
   categoryId: string
@@ -19,4 +19,6 @@ export type Product = {
   subType?: ISubtype
   variants: VariantProduct[]
   previewPhoto?: string
+  inFavorite?: boolean
+  inCart?: boolean
 }

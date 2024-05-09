@@ -7,7 +7,9 @@ export const createCart = async ( userId, productIds ) => {
 }
 
 export const editCart = async (personId, productIds) => {
-    const cart = await cartModelM.findOneAndUpdate({personId}, {products: productIds});
+    console.log(productIds, 'productIds')
+    const cart = await cartModelM.findOneAndUpdate({personId}, {products: productIds}, {new: true});
+    console.log(cart, 'cart')
     return cart;
 }
 

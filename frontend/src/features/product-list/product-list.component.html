@@ -4,7 +4,10 @@
     <span class="product-name">{{product.name}}</span>
     <div class="product-flex">
       <span class="product-price">{{product.variants[0].price}} р.</span>
-      <img src="assets/icons/fav.svg" alt="" class="product-favorite" >
+      <div class="product-btns">
+        <img src="assets/icons/cart.svg" (click)="addToCart(product)" alt="корзина" [ngClass]="{ 'active': inCart(product), 'product-btn': true }">
+        <img src="assets/icons/fav.svg" (click)="addToFavorite(product)" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
+      </div>
     </div>
   </div>
 </div>

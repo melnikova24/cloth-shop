@@ -41,5 +41,24 @@
       font-weight: 500;
       font-size: 20px;
     }
+
+    &-btns {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    &-btn {
+      cursor: pointer;
+      transition: transform .35s;
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(52%) sepia(6%) saturate(6701%) hue-rotate(319deg) brightness(83%) contrast(64%);
+        transform: scale(1.2);
+      }
+      &.active {
+        transform: scale(1.1);
+        filter: brightness(0) saturate(100%) invert(52%) sepia(6%) saturate(6701%) hue-rotate(319deg) brightness(83%) contrast(64%);
+      }
+    }
   }
 }
