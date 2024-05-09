@@ -4,12 +4,12 @@
     <div class="sidebar-item">
       <span class="sidebar-subtitle">Цена</span>
       <div class="flex">
-        <input type="text" class="sidebar-input" formControlName="minPrice" (input)="removeLeadingZeros()">
+        <input type="text" class="sidebar-input" formControlName="minPrice" placeholder="0" appOnlyNumber>
         <span>-</span>
-        <input type="text" class="sidebar-input" formControlName="maxPrice" (input)="removeLeadingZeros()">
+        <input type="text" class="sidebar-input" formControlName="maxPrice" placeholder="99990" appOnlyNumber>
       </div>
     </div>
-    <div class="sidebar-item">
+    <div class="sidebar-item" >
       <span class="sidebar-subtitle">Категория</span>
       <div class="sidebar-filter" *ngFor="let category of categories" >
         <app-checkbox
@@ -21,7 +21,7 @@
         <span class="sidebar-filtername">{{ category.name }}</span>
       </div>
     </div>
-    <div class="sidebar-item">
+    <div class="sidebar-item" *ngIf="filters.sizes.length !== 0">
       <span class="sidebar-subtitle">Размеры</span>
       @for (size of filters.sizes; track size) {
         <div class="sidebar-filter" >
@@ -35,7 +35,7 @@
         </div>
       }
     </div>
-    <div class="sidebar-item">
+    <div class="sidebar-item" *ngIf="filters.colors.length !== 0">
       <span class="sidebar-subtitle">Цвет</span>
       @for (color of filters.colors; track color) {
         <div class="sidebar-filter" >
