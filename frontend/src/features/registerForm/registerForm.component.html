@@ -1,19 +1,25 @@
 <form class="register" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
   <span class="register-label">Почта</span>
   <input type="text" class="register-input" formControlName="email">
-  <div *ngIf="f('email')?.invalid && f('email')?.touched" class="register-invalid-feedback">
-    Некорректный адрес почты
-  </div>
+  @if (f('email')?.invalid && f('email')?.touched) {
+    <div class="register-invalid-feedback">
+      Некорректный адрес почты
+    </div>
+  }
   <span class="register-label">Имя</span>
   <input type="text" class="register-input" formControlName="name">
-  <div *ngIf="f('name')?.invalid && f('name')?.touched" class="register-invalid-feedback">
-    Имя должно состоять из более 2 символов
-  </div>
+  @if (f('name')?.invalid && f('name')?.touched) {
+    <div class="register-invalid-feedback">
+      Имя должно состоять из более 2 символов
+    </div>
+  }
   <span class="register-label">Пароль</span>
   <input type="password" class="register-input" formControlName="password">
-  <div *ngIf="f('password')?.invalid && f('password')?.touched" class="register-invalid-feedback">
-    Пароль должен состоять из более 8 символов
-  </div>
+  @if (f('password')?.invalid && f('password')?.touched) {
+    <div class="register-invalid-feedback">
+      Пароль должен состоять из более 8 символов
+    </div>
+  }
   <span class="register-label">Есть аккаунт? <span routerLink="/register">Войти!</span></span>
   <button class="register-btn" [disabled]="registerForm.invalid">Регистрация</button>
 </form>
