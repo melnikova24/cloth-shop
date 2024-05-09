@@ -11,13 +11,16 @@ import {
 
 export async function postProduct (req, res, next) {
     try {
-        const validationErrors = validationResult(req);
-        if (!validationErrors.isEmpty()) {
-            return next(ApiError.BadRequest('Ошибка валидации', validationErrors.array()));
-        }
+        console.log(1)
+        // const validationErrors = validationResult(req);
+        //
+        // if (!validationErrors.isEmpty()) {
+        //     return next(ApiError.BadRequest('Ошибка валидации', validationErrors.array()));
+        // }
         const product = await createProduct(req.body);
         return res.status(200).json(product);
     } catch (e) {
+        console.log(e)
         next(e);
     }
 }

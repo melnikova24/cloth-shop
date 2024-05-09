@@ -28,7 +28,9 @@ export async function login (req, res, next) {
     try {
         const userData = await loginService(req.body);
         res.cookie('refreshToken', userData.refreshToken, {maxAge: cookieMaxAge, httpOnly: true});
-        return res.status(200).json(userData);
+        setTimeout(() => {
+            return res.status(200).json(userData);
+        }, 5000)
     } catch (e) {
         next(e);
     }
