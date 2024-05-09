@@ -34,7 +34,8 @@ export async function deleteCategory (req, res, next) {
 
 export async function getCategories (req, res, next) {
     try {
-        const categories = await receiveCategories();
+        const subTypeId = req.query.subTypeId;
+        const categories = await receiveCategories(subTypeId);
         return res.status(200).json(categories);
     } catch (e) {
         next(e);

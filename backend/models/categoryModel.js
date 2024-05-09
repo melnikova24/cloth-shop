@@ -5,6 +5,7 @@ const categoryModel = new mongoose.Schema({
     name: { type: String, required: true, min: 2, max: 80 },
     description: { type: String },
     photo: { type: String },
+    subTypeId: { type: mongoose.Schema.Types.ObjectId, ref: "SubType" , required: true }
 })
 
 categoryModel.pre('findOneAndDelete', async function (next) {
