@@ -27,4 +27,12 @@ export class FavoritesService {
     const favorites = this.getFavorites();
     return favorites.some(favorite => favorite._id === product._id);
   }
+
+  clearFavorites() {
+    localStorage.setItem('favorites', JSON.stringify([]));
+  }
+
+  countFavorites(): number {
+    return this.getFavorites().length
+  }
 }

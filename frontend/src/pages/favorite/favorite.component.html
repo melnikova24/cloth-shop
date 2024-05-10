@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <div class="header">
+      <span class="title">Избранное ({{favoritesCount()}})</span>
+      <div class="clear" (click)="clearFavorites()">
+        <span>Очистить</span>
+        <img src="assets/icons/delete.svg" alt="">
+      </div>
+    </div>
+    <div class="products">
+        <div class="product" *ngFor="let product of products">
+          <img [src]="product.variants[0].photos[0]" alt="" class="product-img">
+          <span class="product-name">{{product.name}}</span>
+          <div class="product-flex">
+            <span class="product-price">{{product.variants[0].price}} р.</span>
+            <img src="assets/icons/fav.svg" (click)="addToFavorite(product)" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-favorite': true }">
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
