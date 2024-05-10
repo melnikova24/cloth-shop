@@ -1,0 +1,22 @@
+<section>
+  <div class="container">
+    <h2 class="title">ЧАСТЫЕ ВОПРОСЫ</h2>
+    <div class="question" *ngFor="let question of Questions">
+      <button
+        type="button"
+        class="btn"
+        (click)="question.isCollapsed = !question.isCollapsed"
+        [attr.aria-expanded]="!question.isCollapsed"
+        aria-controls="collapseExample"
+      >
+        {{ question.question }}
+      </button>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="question.isCollapsed">
+        <div class="card1">
+          {{ question.answer }}
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+  </div>
+</section>

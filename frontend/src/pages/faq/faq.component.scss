@@ -1,0 +1,43 @@
+
+section {
+  padding-top: 74px;
+  width: 100%;
+  min-height: 90vh;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 22px;
+  color: #242424;
+  margin-top: 8px;
+}
+
+.card1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #777;
+  border-top: 1px solid #e3e3e3;
+  //padding: 12px 1px 0;
+}
+
+.btn {
+  color: #777;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .2s ease-in-out;
+  padding: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e3e3e3;
+  margin: 5px 0;
+}
