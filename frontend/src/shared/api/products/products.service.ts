@@ -29,7 +29,7 @@ export class ProductsService {
   }
 
   getProductFilters = (subTypeId: string) => {
-    return this.http.get(BASE_URL+'/products-filters?subTypeId='+subTypeId, )
+    return this.http.get<Record<string, string[]>>(BASE_URL+'/products-filters?subTypeId='+subTypeId, )
   }
 
   postProduct = (product: Product) => {

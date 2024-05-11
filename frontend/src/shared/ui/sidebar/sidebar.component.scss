@@ -44,7 +44,7 @@
     min-height: 50px;
     background-color: #ece8dd;
 
-    overflow: hidden;
+    //overflow: hidden;
   }
 
   &-filter {
@@ -76,4 +76,31 @@
     }
   }
 }
+
+.d-inline-block {
+  width: 100%;
+}
+
+.btn {
+  color: #7c7769;
+  background-color: transparent;
+  border-color: #7c7769;
+  width: 100%;
+}
+
+.btn:hover {
+  color: #7c7769;
+  background-color: #c0b8a3;
+  border-color: #7c7769;
+}
+
+.dropdown-item {
+  z-index: 100;
+  width: 100%;
+}
+
+.dropdown-menu {
+  width: 100%;
+}
+
 

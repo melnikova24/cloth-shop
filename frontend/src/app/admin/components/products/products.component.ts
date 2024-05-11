@@ -24,11 +24,12 @@ import {ProductFormComponent} from "../../../../features/product-form/product-fo
 import {ProductEditFormComponent} from "../../../../features/product-edit-form/product-edit-form.component";
 import {ProductsService} from "../../../../shared/api/products/products.service";
 import {QueryParamsService} from "../../../../shared/services/query-params.service";
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, ProductFormComponent, ProductEditFormComponent],
+  imports: [CommonModule, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, ProductFormComponent, ProductEditFormComponent, ReactiveFormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -40,12 +41,41 @@ export class ProductsComponent implements OnInit, OnDestroy  {
   selectedProduct!: Product | null;
   products!: Product[];
   subscription!: Subscription;
+  filterForm!: FormGroup;
 
-  constructor(private categoriesService: CategoriesService, private productService: ProductsService, private queryParamsService: QueryParamsService, private cd: ChangeDetectorRef) { }
+  constructor(private fb: FormBuilder, private categoriesService: CategoriesService, private productService: ProductsService, private queryParamsService: QueryParamsService, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.getProducts()
+    this.filterForm = this.fb.group({
+      name: [''],
+      colors: [''],
+      sizes: [''],
+      categoryId: [''],
+    });
+    this.categories = this.categoriesService.getCategories('all');
     this.cd.detectChanges()
+  }
+
+  clear() {
+    this.filterForm.reset();
+    this.getProducts()
+  }
+
+  selectCategory(categoryId: ICategory) {
+    this.filterForm.get('categoryId')?.setValue(categoryId)
+  }
+
+  selectColor(colors: string) {
+    this.filterForm.get('colors')?.setValue(colors)
+  }
+
+  selectSize(size: string) {
+    this.filterForm.get('sizes')?.setValue(size)
+  }
+
+  get form() {
+    return this.filterForm.controls
   }
 
   ngOnDestroy() {
@@ -62,6 +92,11 @@ export class ProductsComponent implements OnInit, OnDestroy  {
             this.cd.detectChanges()
           }
         );
+    })
+    this.productService.getProductFilters('all').subscribe(filters => {
+      this.colors = filters['colors']
+      this.sizes = filters['sizes']
+      this.cd.detectChanges()
     })
   }
 
@@ -87,6 +122,17 @@ export class ProductsComponent implements OnInit, OnDestroy  {
   deleteProduct(product: Product) {
     this.productService.deleteProduct(product._id).subscribe(() => {
       this.products = this.products.filter(p => p._id !== product._id);
+      this.cd.detectChanges()
+    })
+  }
+
+  submit() {
+    const filters = {
+      ...this.filterForm.value,
+      categoryId: this.filterForm.get('categoryId')?.value?._id || 'null'
+    }
+    this.productService.getProducts(filters).subscribe(products => {
+      this.products = products
       this.cd.detectChanges()
     })
   }
