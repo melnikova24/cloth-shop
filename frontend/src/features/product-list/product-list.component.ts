@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 
 import {CartService, CartType, Product} from "../../shared/api";
 import {NgClass, NgForOf} from "@angular/common";
@@ -14,28 +14,16 @@ import {FavoritesService} from "../../shared/services/favorites.service";
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductListComponent implements OnInit  {
+export class ProductListComponent  {
   @Input() products: Product[] = [];
-  cartItems: CartType = {} as CartType;
+  @Input() cartItems: CartType = {} as CartType;
 
-  constructor(private cartService: CartService, private favoritesService: FavoritesService) {
+  constructor(private cartService: CartService, private favoritesService: FavoritesService, private cd: ChangeDetectorRef) {
 
   }
 
-  ngOnInit() {
-    try {
-      this.cartService.getCartItems('main').subscribe(cartItems => {
-        this.cartItems.products = cartItems.products
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  inCart(product: Product) {
-    return this.cartItems.products.some(cartItem => cartItem === product._id)
-  }
 
   addToFavorite(product: Product) {
     this.favoritesService.addFavorite(product)
@@ -46,14 +34,15 @@ export class ProductListComponent implements OnInit  {
     const filtered = this.cartItems.products.filter(item => item !== product._id)
     if (filtered.length === this.cartItems.products.length) {
       this.cartService.editCart([...this.cartItems.products, product._id]).subscribe(cartItems => {
-        this.cartItems.products = cartItems.products
+        this.cartItems = {...cartItems, products: [...this.cartItems.products, product._id]}
       })
     } else {
       this.cartService.editCart([...filtered]).subscribe(cartItems => {
-        this.cartItems.products = cartItems.products
+        this.cartItems = {...cartItems, products: [...cartItems.products]}
       })
     }
-
+    this.products = this.products.map(p => p._id === product._id ? {...p, inCart: !p.inCart} : p)
+    this.cd.detectChanges()
   }
 
   isFavorite(product: Product) {

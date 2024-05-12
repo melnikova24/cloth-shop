@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@an
 import {ActivatedRoute} from "@angular/router";
 import {SidebarComponent} from "../../shared/ui/sidebar/sidebar.component";
 import {ProductListComponent} from "../../features/product-list/product-list.component";
-import {Product} from "../../shared/api";
+import {CartService, CartType, Product} from "../../shared/api";
 import {Subscription} from "rxjs";
 import {SubtypeService} from "../../shared/api/subtypes";
 import {ProductsService} from "../../shared/api/products/products.service";
@@ -22,7 +22,8 @@ export class CatalogComponent implements OnInit {
   products: Product[] = [];
   productsSubscription!:  Subscription;
   type: string = 'all';
-  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private subTypesService: SubtypeService, private cd: ChangeDetectorRef) {
+  cartItems: CartType = {} as CartType;
+  constructor(private cartService: CartService, private ProductsService: ProductsService, private route: ActivatedRoute, private subTypesService: SubtypeService, private cd: ChangeDetectorRef) {
 
   }
   ngOnInit() {
@@ -30,17 +31,25 @@ export class CatalogComponent implements OnInit {
   }
 
   requestProducts() {
-    this.route.params.subscribe(params => {
-      this.subTypesService.getSubtypes().subscribe(subTypes => {
-        this.type = params['type'];
-        this.productsSubscription = this.ProductsService.getProducts({subTypeId: subTypes[EngRusTypes[this.type]]}).subscribe((products) => {
-          this.products = products.map((product) => {
-            return {...product, previewPhoto: product.variants[0].photos[0]}
+    try {
+      this.cartService.getCartItems('main').subscribe(cartItems => {
+        this.cartItems.products = cartItems.products
+        this.route.params.subscribe(params => {
+          this.subTypesService.getSubtypes().subscribe(subTypes => {
+            this.type = params['type'];
+            this.productsSubscription = this.ProductsService.getProducts({subTypeId: subTypes[EngRusTypes[this.type]]}).subscribe((products) => {
+              this.products = products.map((product) => {
+                return {...product, previewPhoto: product.variants[0].photos[0], inCart: cartItems.products.some(cartItem => cartItem === product._id)}
+              })
+              this.cd.detectChanges()
+            })
           })
-          this.cd.detectChanges()
         })
       })
-    })
+    } catch (e) {
+      console.log(e)
+    }
+
   }
 
   updateProducts(products: Product[]) {
