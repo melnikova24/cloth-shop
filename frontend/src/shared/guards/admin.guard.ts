@@ -4,5 +4,5 @@ import {StorageService} from "../services/storage.service";
 
 export const adminGuard: CanActivateFn = (route, state) => {
   const storageService = inject(StorageService);
-  return storageService.getUser().role.includes('admin');
+  return storageService.getUser().user.role.includes('admin');
 };
