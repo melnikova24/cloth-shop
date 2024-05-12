@@ -1,94 +1,79 @@
 <section class="start">
   <div class="container">
-    <img src="../../assets/backgrounds/main-bg.png" alt="" class="start-img">
-    <p class="start-text">
-      Добро пожаловать в мир мечты и волшебства детской моды -  магазин Sakina!
-      <br>
-      Здесь вы найдете все необходимое, чтобы создать неповторимый образ
-      <br>
-      для своего ребенка, от повседневной одежды
-      <br>
-      до праздничных нарядов!
-    </p>
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="" />
+        </div>
+        <div class="carousel-caption start-caption">
+          <h3>Тепло с любовью</h3>
+          <p>Новая коллекция теплой зимней одежды!</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="" />
+        </div>
+        <div class="carousel-caption start-caption">
+          <h3>Весна близко</h3>
+          <p>Подготовьте ребенка к весне с нашей помощью</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="" />
+        </div>
+        <div class="carousel-caption start-caption">
+          <h3>Радость в каждый дом</h3>
+          <p>Коллекция ярких вещей для мальчиков и девочек</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
   </div>
 </section>
-<section class="offer">
+<!--<section class="offer">-->
+<!--  <div class="container">-->
+<!--    <div class="offer-text">-->
+<!--      <span class="offer-title">Войдите или зарегистрируйтесь прямо сейчас!</span>-->
+<!--      <span class="offer-subtitle">чтобы получать персональные предложения</span>-->
+<!--    </div>-->
+<!--    <button class="offer-btn">Войти</button>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="types">
   <div class="container">
-    <div class="offer-text">
-      <span class="offer-title">Войдите или зарегистрируйтесь прямо сейчас!</span>
-      <span class="offer-subtitle">чтобы получать персональные предложения</span>
+    <div routerLink="catalog/children" class="types-link">
+      <img src="assets/categories/babies.jpg" alt="" class="types-img">
     </div>
-    <button class="offer-btn">Войти</button>
+    <div routerLink="catalog/boys" class="types-link">
+      <img src="assets/categories/boys.jpg" alt="" class="types-img">
+    </div>
+    <div routerLink="catalog/girls" class="types-link">
+      <img src="assets/categories/girls.jpg" alt="" class="types-img">
+    </div>
   </div>
 </section>
-<section class="popular">
+<section class="aboutus" id="aboutus">
   <div class="container">
-    <div class="line"></div>
-    <h2 class="title">Наиболее популярное</h2>
-    <div class="popular-products">
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
-          </div>
-        </div>
-      </div>
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
-          </div>
-        </div>
-      </div>
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
-          </div>
-        </div>
-      </div>
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
-          </div>
-        </div>
-      </div>
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
-          </div>
-        </div>
-      </div>
-      <div class="popular-product">
-        <img src="" alt="фото товара" class="popular-product-img">
-        <span class="popular-product-descr">Описание</span>
-        <div class="popular-product-bottom">
-          <span class="popular-product-price">1800 Р</span>
-          <div class="popular-product-btns">
-            <img src="../../assets/icons/cart.svg" alt="корзина" class="popular-product-btn">
-            <img src="../../assets/icons/favorite.svg" alt="избранное" class="popular-product-btn">
+    <div class="text">
+      <h2 class="title">О нас</h2>
+    </div>
+    <div class="text">Шопинг на современных сайтах — это прекрасный способ совершить покупки онлайн, не потратив при этом драгоценное время на походы по магазинам. Для родителей опция онлайн-шопинга особенно актуальна и становится настоящей находкой: сэкономленное время намного приятнее провести с близкими людьми или за важными делами, которых немало у мам!</div>
+    <div class="text">Каталог интернет-магазина предоставляет Вам возможность первыми ознакомиться со всеми новинками и ассортиментом модных коллекций 2023-2024 года и узнать об актуальных ценах и скидках на товары.</div>
+  </div>
+</section>
+<section class="product">
+  <div class="container">
+    <h2 class="title">Популярное</h2>
+    <div class="product-list">
+      <div class="product-item" *ngFor="let product of latestProducts">
+        <img [src]="product.previewPhoto" alt="фото товара" class="product-img">
+        <span class="product-name">{{ product.name }}</span>
+        <div class="product-bottom">
+          <span class="product-price">{{ product.variants[0].price }} Р</span>
+          <div class="product-btns">
+            <img src="assets/icons/cart.svg" (click)="addToCart(product)" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">
+            <img src="assets/icons/fav.svg" (click)="addToFavorite(product)" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
           </div>
         </div>
       </div>
@@ -96,7 +81,7 @@
   </div>
 </section>
 <section class="contacts">
-  <div class="line"></div>
+<!--  <div class="line"></div>-->
   <div class="container">
     <h2 class="title">Мы на карте</h2>
     <div class="subcontainer">
@@ -114,4 +99,5 @@
     </div>
   </div>
 </section>
-<app-product-list></app-product-list>
+
+
