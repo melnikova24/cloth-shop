@@ -1,1 +1,55 @@
-<p>product works!</p>
+<section class="section">
+  <div class="container">
+    <div class="product">
+      <div class="carousel">
+        <ngb-carousel #myCarousel="ngbCarousel">
+          <ng-container *ngFor="let image of selectedVariant.photos;let i = index">
+            <ng-template ngbSlide >
+              <div class="picsum-img-wrapper">
+                <img [src]="image" alt="Random first slide" (click)="open(photoBig, image); $event.stopPropagation()">
+              </div>
+            </ng-template>
+          </ng-container >
+        </ngb-carousel>
+      </div>
+      <div class="product-right">
+        <div class="product-head">
+          <span class="product-name">{{product.name}}</span>
+          <span class="product-price">{{selectedVariant.price}}р.</span>
+        </div>
+        <div class="product-color">
+          <p>Цвет:</p>
+          <div class="product-colors">
+            <span *ngFor="let color of colors" (click)="selectColor(color)" [ngClass]="{'active':color===selectedColor}">{{color}}</span>
+          </div>
+        </div>
+        <div class="product-size">
+          <p>Размер:</p>
+          <div class="product-sizes">
+            <span class="none" *ngFor="let size of sizes"  (click)="selectSize(size)" [ngClass]="{'active':size===selectedSize}">{{size}}</span>
+          </div>
+        </div>
+        <div class="product-descr">
+          <p class="text">{{product.description}}</p>
+        </div>
+        <div class="product-buttons">
+          <button (click)="addToCart(product)" [ngClass]="{'active':product.inCart}">
+            <img src="assets/icons/cart.svg" alt="" >
+            <span *ngIf="!product.inCart">Добавить в корзину</span>
+            <span *ngIf="product.inCart">В корзине</span>
+          </button>
+          <button (click)="addToFavorite(product)" [ngClass]="{'active':product.inFavorite}">
+            <img src="assets/icons/fav.svg" alt="" >
+            <span *ngIf="!product.inFavorite">В избранное</span>
+            <span *ngIf="product.inFavorite">В избранном</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #photoBig let-modal>
+  <div class="blur" (click)="modal.close('Save click')">
+    <img [src]="selectedPhoto" alt="">
+  </div>
+</ng-template>
