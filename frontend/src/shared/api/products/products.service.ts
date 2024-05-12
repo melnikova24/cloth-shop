@@ -37,7 +37,7 @@ export class ProductsService {
   }
 
   patchProduct = (product: Product) => {
-    return this.http.patch(BASE_URL+'/products/'+product._id, product)
+    return this.http.patch<Product>(BASE_URL+'/products/'+product._id, product)
   }
 
   deleteProduct = (id: string) => {

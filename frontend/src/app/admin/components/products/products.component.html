@@ -97,7 +97,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
-    <app-product-form (getProducts)="getProducts()"></app-product-form>
+    <app-product-form (getProducts)="getProducts()" (closeModal)="modal.close('Save click')"></app-product-form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
@@ -109,8 +109,8 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
-    <app-product-edit-form [product]="selectedProduct"></app-product-edit-form>
-  </div>
+    <app-product-edit-form [product]="selectedProduct" (getProducts)="getProducts()" (closeModal)="modal.close('Save click')" ></app-product-edit-form>
+  </div>(click)="modal.close('Save click')"
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
   </div>

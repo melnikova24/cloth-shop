@@ -1,12 +1,12 @@
 <div class="products">
-  <div class="product" *ngFor="let product of products">
+  <div class="product" *ngFor="let product of products" [routerLink]="product._id">
     <img [src]="product.previewPhoto" alt="" class="product-img">
     <span class="product-name">{{product.name}}</span>
     <div class="product-flex">
       <span class="product-price">{{product.variants[0].price}} р.</span>
       <div class="product-btns">
-        <img src="assets/icons/cart.svg" (click)="addToCart(product)" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">
-        <img src="assets/icons/fav.svg" (click)="addToFavorite(product)" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
+        <img src="assets/icons/cart.svg" (click)="addToCart(product); $event.stopPropagation();" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">
+        <img src="assets/icons/fav.svg" (click)="addToFavorite(product); $event.stopPropagation();" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
       </div>
     </div>
   </div>

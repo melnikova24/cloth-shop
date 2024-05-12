@@ -31,6 +31,11 @@ export class ProductFormComponent implements OnInit {
   AddProductEmit(product: Product): void {
     this.getProducts.emit();
   }
+  @Output() closeModal = new EventEmitter();
+  closeModalEmit (): void {
+    this.closeModal.emit();
+  }
+
 
 
   onImageSelected(event: Event): void {
@@ -123,6 +128,10 @@ export class ProductFormComponent implements OnInit {
       next: (data) => {
         alert('Успешно')
         this.AddProductEmit(data)
+        this.formGroupProduct.reset();
+        this.imageUrls = [];
+        this.formGroupProduct.controls['variants'].reset();
+        this.closeModalEmit()
       },
       error: err => {
         alert("Произошла ошибка")

@@ -4,13 +4,15 @@ import {CartService, CartType, Product} from "../../shared/api";
 import {NgClass, NgForOf} from "@angular/common";
 import {ProductsService} from "../../shared/api/products/products.service";
 import {FavoritesService} from "../../shared/services/favorites.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
   imports: [
     NgForOf,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',

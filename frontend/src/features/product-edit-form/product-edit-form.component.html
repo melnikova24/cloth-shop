@@ -1,0 +1,56 @@
+<form class="product" [formGroup]="formGroupProduct">
+  <input type="text" class="product-name" formControlName="name" placeholder="Название">
+  <input type="text" class="product-name" formControlName="description" placeholder="Описание">
+  <div class="row">
+    <div class="col flex">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>
+          <span *ngIf="selectedSubtype.length < 1">Выберите тип</span>
+          <span *ngIf="selectedSubtype.length > 0">{{ selectedSubtype[0] }}</span>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+          <button ngbDropdownItem (click)="changeType(subType)" *ngFor="let subType of subtypes">{{ subType[0] }}</button>
+        </div>
+      </div>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          <span *ngIf="!selectedCategory">Выберите категорию</span>
+          <span *ngIf="selectedCategory">{{ selectedCategory.name }}</span>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let category of categories" (click)="changeCategory(category)">{{category.name}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-variants" formArrayName="variants"  >
+    <div class="product-variant" *ngFor="let variant of variants.controls; let j = index" >
+      <div [formGroupName]="j" class="col-flex">
+<!--        <input type="text" class="product-color" placeholder="Цвет" formControlName="{{j}}" [value]="variantValues(j, 'color')" >-->
+<!--        <input type="text" class="product-size"  placeholder="Размер" formControlName="{{j}}" [value]="variantValues(j, 'size')">-->
+<!--        <input type="text" class="product-price"  placeholder="Цена" formControlName="{{j}}" [value]="variantValues(j, 'price')">-->
+        <input type="text" class="product-color" placeholder="Цвет" formControlName="color"  >
+        <input type="text" class="product-size"  placeholder="Размер" formControlName="size" >
+        <input type="text" class="product-price"  placeholder="Цена" formControlName="price" >
+        <div class="upload-area">
+          <div class="flex">
+            <label for="file-upload" class="custom-file-upload">
+              Выбрать фото
+            </label>
+            <input id="file-upload" type="file" multiple="multiple" (change)="onImageSelected($event)" accept="image/*" formControlName="photos">
+            <button (click)="upload(j)" type="button" class="custom-file-upload" >Загрузить</button>
+          </div>
+          <div class="images">
+            <div class="images-item" *ngFor="let image of imageUrls[j]; let i = index" >
+              <img [src]="image" alt="Uploaded Image">
+              <img src="assets/icons/delete.svg" class="images-btn" (click)="removePhoto(j, i)">
+            </div>
+          </div>
+        </div>
+        <button class="product-variant-remove" (click)="removeVariant(j)">Удалить</button>
+      </div>
+    </div>
+    <button (click)="addVariant()" class="add-btn">Добавить вариант</button>
+  </div>
+  <button (click)="submit()" class="add-btn">Сохранить</button>
+</form>

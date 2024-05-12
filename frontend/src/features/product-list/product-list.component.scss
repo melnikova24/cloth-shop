@@ -12,10 +12,11 @@
     flex-direction: column;
     gap: 8px;
     overflow: hidden;
+    cursor: pointer;
 
     &-img {
       width: 100%;
-      height: 350px;
+      height: 450px;
       //height: 260px;
       object-fit: cover;
     }
