@@ -33,7 +33,7 @@ export class FavoriteComponent implements OnInit {
   }
 
   addToFavorite(product: Product) {
-    this.favoritesService.addFavorite(product)
+    this.products = this.favoritesService.addFavorite(product)
   }
 
   clearFavorites() {
