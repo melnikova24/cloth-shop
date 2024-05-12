@@ -68,10 +68,6 @@ export class SidebarComponent implements OnInit {
     this.requestProducts()
   }
 
-  getCategoryName() {
-    return this.filtersForm.get('categoryId')?.value.name
-  }
-
   requestProducts() {
     this.filtersForm = new FormGroup({
       'sizes': new FormControl(''),
@@ -95,7 +91,6 @@ export class SidebarComponent implements OnInit {
               console.log(err)
             }
           })
-          // console.log(EngRusTypes[this.type], this.subTypes)
           // @ts-ignore
           this.productsService.getProductFilters(data[EngRusTypes[this.type]]).subscribe({
             next: data => {
@@ -145,18 +140,7 @@ export class SidebarComponent implements OnInit {
     this.filtersForm.controls['sizes'].setValue('')
     this.filtersForm.controls['colors'].setValue('')
     this.filtersForm.controls['categoryId'].setValue('')
-    this.requestProducts()
+    this.submitFilters()
   }
 
-  disableCheckboxes(value: string, groupName: string) {
-    if (this.checkboxes) {
-      this.checkboxes.map(checkbox => {
-        const isThisGroup = checkbox.groupName === groupName;
-        const isThisValue = checkbox.value === value;
-        if (isThisGroup) {
-          isThisValue ? checkbox.isChecked = true : checkbox.isChecked = false
-        }
-      })
-    }
-  }
 }
