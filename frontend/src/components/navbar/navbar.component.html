@@ -6,14 +6,31 @@
       <span routerLink="catalog/children" class="nav-link" routerLinkActive="active" >Малыши</span>
       <span routerLink="catalog/girls" class="nav-link" routerLinkActive="active">Девочки</span>
       <span routerLink="catalog/boys" class="nav-link" routerLinkActive="active">Мальчики</span>
-<!--      <span routerLink="contacts" class="nav-link" routerLinkActive="active">Контакты</span>-->
       <span routerLink="admin" class="nav-link" routerLinkActive="active" *ngIf="isAdmin">Админ</span>
     </div>
-    <div class="nav-icons" >
+    <div class="nav-icons">
       <img src="../../assets/icons/fav.svg" alt="избранное" class="nav-icon" routerLink="favorite">
       <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="cart" >
-<!--      <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="login" >-->
-<!--      <img src="../../assets/icons/profile.svg" alt="профиль" class="nav-icon" routerLink="profile">-->
+      <img src="../../assets/icons/menu.svg" alt="меню" class="nav-icon2" (click)="toggle()" >
+    </div>
+  </div>
+  <div [ngClass]="{'mobile': true, 'active': isOpen }">
+    <div class="mobile-links">
+      <span routerLink="" class="mobile-link" (click)="toggle()">Главная</span>
+      <span routerLink="catalog/children" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Малыши</span>
+      <span routerLink="catalog/girls" class="mobile-link" routerLinkActive="active" (click)="toggle()">Девочки</span>
+      <span routerLink="catalog/boys" class="mobile-link" routerLinkActive="active" (click)="toggle()">Мальчики</span>
+      <span routerLink="cart" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="!isAuth" >Корзина</span>
+      <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="!isAuth" >Избранное</span>
+      <span routerLink="admin" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAdmin">Админ</span>
+    </div>
+    <div class="mobile-bottom" (click)="logout()" *ngIf="isAuth"  >
+      <img src="../../assets/icons/exit.svg" alt="меню" class="nav-icon2" >
+      <span>Выйти</span>
+    </div>
+    <div class="mobile-bottom" routerLink="login" *ngIf="!isAuth"  (click)="toggle()" >
+      <img src="../../assets/icons/exit.svg" alt="меню" class="nav-icon2" >
+      <span>Войти</span>
     </div>
   </div>
 </nav>
