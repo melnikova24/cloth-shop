@@ -103,4 +103,48 @@
   width: 100%;
 }
 
+@media screen and (max-width: 991px) {
+  .sidebar {
+    height: 0;
+    padding: 0;
+    transition: .5s;
+
+    &-input {
+      width: 49%;
+      padding: 10px;
+    }
+
+    &-flex {
+      margin: 0 auto;
+    }
+
+    &-filters {
+      flex-direction: row;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    &.active {
+      height: 255px;
+      padding: 5px;
+    }
+
+    &-btn {
+      width: 48%;
+      margin: 0;
+    }
+
+    &-item {
+      width: 48%;
+      height: 70px;
+
+      &:nth-child(1) {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 

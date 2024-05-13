@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  EventEmitter,
+  EventEmitter, Input,
   OnInit,
   Output,
   QueryList,
@@ -16,7 +16,7 @@ import {ISubtype, SubtypeService} from "../../api/subtypes";
 import { ActivatedRoute } from '@angular/router';
 import {CATEGORIES, COLORS, EngRusTypes, SIZES} from "../../constants";
 import {CategoriesService, ICategory, Product} from "../../api";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {OnlyNumberDirective} from "../../directives/onlyNumber.directive";
 import {
   NgbDropdown,
@@ -30,7 +30,7 @@ import {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CheckboxComponent, FormsModule, ReactiveFormsModule, NgForOf, OnlyNumberDirective, NgIf, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle],
+  imports: [CheckboxComponent, FormsModule, ReactiveFormsModule, NgForOf, OnlyNumberDirective, NgIf, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, NgClass],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush
@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
   sizes: string[] = SIZES;
   colors: string[] = COLORS;
 
-
+  @Input() isOpen!: boolean;
 
   @Output() updateProducts = new EventEmitter<Product[]>();
   updateProductsHandler(products: Product[]) {

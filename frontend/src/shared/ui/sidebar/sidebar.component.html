@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" [ngClass]="{'active': isOpen}">
 <!--  <span class="sidebar-title">Фильтры</span>-->
   <form class="sidebar-filters" [formGroup]="filtersForm" (ngSubmit)="submitFilters()">
     <div class="sidebar-item">
