@@ -21,7 +21,7 @@ export class NavbarComponent {
   }
 
   logout() {
-    this.authService.logout()
+    const response = this.authService.logout()
   }
 
   get isAdmin () {

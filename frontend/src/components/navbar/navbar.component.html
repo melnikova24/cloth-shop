@@ -20,8 +20,8 @@
       <span routerLink="catalog/children" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Малыши</span>
       <span routerLink="catalog/girls" class="mobile-link" routerLinkActive="active" (click)="toggle()">Девочки</span>
       <span routerLink="catalog/boys" class="mobile-link" routerLinkActive="active" (click)="toggle()">Мальчики</span>
-      <span routerLink="cart" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="!isAuth" >Корзина</span>
-      <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="!isAuth" >Избранное</span>
+      <span routerLink="cart" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Корзина</span>
+      <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Избранное</span>
       <span routerLink="admin" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAdmin">Админ</span>
     </div>
     <div class="mobile-bottom" (click)="logout()" *ngIf="isAuth"  >

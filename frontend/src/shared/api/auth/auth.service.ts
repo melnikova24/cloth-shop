@@ -31,7 +31,9 @@ export class AuthService {
   }
 
   logout() {
-      return this.http.post(BASE_URL+'/logout', {}, httpOptions);
+    this.storageService.clear();
+    this.isLoggedIn = false;
+    return this.http.post(BASE_URL+'/logout', {}, httpOptions);
   }
 
   init() {
@@ -49,7 +51,7 @@ export class AuthService {
   }
   /**Функция для проверки роли пользователя*/
   isAdmin() {
-    return this.storageService.getUser().user.role.includes('admin');
+    return this.storageService.getUser().user?.role.includes('admin') || false;
   }
 }
 
