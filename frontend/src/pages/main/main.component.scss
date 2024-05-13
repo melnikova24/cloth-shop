@@ -121,6 +121,9 @@
     &-s {
       display: none;
     }
+    &-m {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 1330px) {
@@ -377,6 +380,148 @@
 }
 
 
-@media screen and (max-width: 1330px) {
+@media screen and (max-width: 991px) {
+  .start {
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .carousel-caption {
+      color: #694444;
 
+      //&:nth-child(1) {
+      //  position: absolute;
+      //  top: 50%;
+      //  transform: translateY(-50%);
+      //  left: 20px;
+      //}
+      h3 {
+
+      }
+      p{
+        font-size: 17px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .aboutus {
+    .text {
+
+    }
+    .container {
+      grid-template-rows: none;
+      padding: 15px 10px;
+    }
+  }
+
+  .types {
+    .container {
+      //grid-template-columns: repeat(3, 1fr);
+      //grid-template-rows: repeat(3, 1fr);
+      //grid-column-gap: 0px;
+      //grid-row-gap: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: self-start;
+
+    }
+    &-link {
+      margin: 0;
+      &:nth-child(1) {
+        //grid-area: 1 / 1 / 2 / 3;
+
+      }
+      &:nth-child(2) {
+        align-self: end;
+        //grid-area: 2 / 2 / 3 / 4;
+        //transform: translateX(clamp(-30px, -30%, 100px));
+      }
+      &:nth-child(3) {
+        //grid-area: 3 / 1 / 4 / 3;
+      }
+    }
+    #square {
+      display: none;
+    }
+    &-img {
+      &-l {
+        display: block;
+      }
+      &-s {
+        display: none;
+      }
+      &-m {
+        display: block;
+      }
+    }
+  }
+
+  .product {
+    &-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .contacts {
+    .container {
+
+    }
+
+    .subcontainer {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    &-left, &-right {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .types {
+    &-link {
+
+    }
+    &-img {
+      &-l {
+        display: none;
+      }
+      &-s {
+        display: block;
+      }
+      &-m {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .aboutus {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .text {
+        padding: 0;
+        font-size: 17px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .product {
+    &-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .contacts {
+    .container {
+      padding: 10px;
+    }
+  }
 }
