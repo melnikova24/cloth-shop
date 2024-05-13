@@ -13,3 +13,40 @@
   display: grid;
   grid-template-columns: 250px 1fr;
 }
+
+.filters {
+  display: none;
+}
+
+.filter {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #7c7769;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}

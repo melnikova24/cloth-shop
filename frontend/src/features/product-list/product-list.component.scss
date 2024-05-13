@@ -63,3 +63,30 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .products {
+    grid-template-columns: 1fr 1fr;
+    .product {
+      &-img {
+        object-fit: contain;
+      }
+      &-btn {
+        cursor: pointer;
+        transition: transform .35s;
+
+        &:hover {
+          filter: none;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .products {
+    grid-template-columns: 1fr;
+
+  }
+}

@@ -8,11 +8,12 @@ import {Subscription} from "rxjs";
 import {SubtypeService} from "../../shared/api/subtypes";
 import {ProductsService} from "../../shared/api/products/products.service";
 import {EngRusTypes} from "../../shared/constants";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [SidebarComponent, ProductListComponent],
+  imports: [SidebarComponent, ProductListComponent, NgIf],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -23,11 +24,16 @@ export class CatalogComponent implements OnInit {
   productsSubscription!:  Subscription;
   type: string = 'all';
   cartItems: CartType = {} as CartType;
+  isOpen: boolean = true
   constructor(private cartService: CartService, private ProductsService: ProductsService, private route: ActivatedRoute, private subTypesService: SubtypeService, private cd: ChangeDetectorRef) {
 
   }
   ngOnInit() {
     this.requestProducts()
+  }
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen
   }
 
   requestProducts() {

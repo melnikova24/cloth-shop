@@ -1,6 +1,17 @@
 <section class="section">
   <div class="container">
-    <app-sidebar (updateProducts)="updateProducts($event)"></app-sidebar>
+    <div>
+      <div class="filters">
+        <div class="filter" (click)="toggleSidebar()">Фильтры</div>
+        <div></div>
+      </div>
+      <div class="desktop">
+        <app-sidebar [isOpen]="isOpen" (updateProducts)="updateProducts($event)"></app-sidebar>
+      </div>
+      <div class="mobile">
+        <app-sidebar [isOpen]="!isOpen" (updateProducts)="updateProducts($event)"></app-sidebar>
+      </div>
+    </div>
     <app-product-list [products]="products" [cartItems]="cartItems"></app-product-list>
   </div>
 </section>
