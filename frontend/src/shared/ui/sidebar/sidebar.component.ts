@@ -111,14 +111,19 @@ export class SidebarComponent implements OnInit {
   }
 
   submitFilters() {
-    this.productsService.getProducts({
-      ...this.filtersForm.value,
-      categoryId: this.filtersForm.get('categoryId')?.value?._id || 'null'
-    }).subscribe(data => {
-      this.updateProductsHandler(data.map(product => ({
-        ...product,
-        previewPhoto: product.variants[0].photos[0]
-      })))
+    this.subtypesService.getSubtypes().subscribe({
+      next: data => {
+        this.productsService.getProducts({
+          ...this.filtersForm.value,
+          subTypeId: data[EngRusTypes[this.type]],
+          categoryId: this.filtersForm.get('categoryId')?.value?._id || 'null'
+        }).subscribe(data => {
+          this.updateProductsHandler(data.map(product => ({
+            ...product,
+            previewPhoto: product.variants[0].photos[0]
+          })))
+        })
+      }
     })
   }
 

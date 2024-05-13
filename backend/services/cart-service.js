@@ -15,6 +15,10 @@ export const editCart = async (personId, productIds) => {
 
 export const receiveCart = async (personId) => {
     const cart = await cartModelM.findOne({personId});
+    if (!cart) {
+        const cart = await createCart(personId, []);
+        return cart;
+    };
     return cart;
 }
 
