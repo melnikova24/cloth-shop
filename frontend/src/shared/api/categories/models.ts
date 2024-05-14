@@ -5,6 +5,6 @@ export interface ICategory {
   name: string;
   photo: string;
   description: string;
-  subTypeId: number;
+  subTypeId: string;
   subType?: ISubtype;
 }
