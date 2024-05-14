@@ -59,4 +59,12 @@
   }
 }
 
+@media screen and (max-width: 340px) {
+  .footer {
+    &-items {
+      flex-direction: column;
+    }
+  }
+}
+
 

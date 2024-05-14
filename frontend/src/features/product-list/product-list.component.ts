@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 
 import {CartService, CartType, Product} from "../../shared/api";
-import {NgClass, NgForOf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {ProductsService} from "../../shared/api/products/products.service";
 import {FavoritesService} from "../../shared/services/favorites.service";
 import {RouterLink} from "@angular/router";
@@ -12,7 +12,8 @@ import {RouterLink} from "@angular/router";
   imports: [
     NgForOf,
     NgClass,
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',

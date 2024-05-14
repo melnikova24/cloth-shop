@@ -12,11 +12,12 @@ import {ProductFormComponent} from "../../../../features/product-form/product-fo
 import {Subscription} from "rxjs";
 import {CategoriesService, ICategory, Product} from "../../../../shared/api";
 import {CategoryFormComponent} from "../../../../features/category-form/category-form.component";
+import {CategoryEditFormComponent} from "../../../../features/category-edit-form/category-edit-form.component";
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, ProductEditFormComponent, ProductFormComponent, CategoryFormComponent],
+  imports: [CommonModule, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, ProductEditFormComponent, ProductFormComponent, CategoryFormComponent, CategoryEditFormComponent],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
 })

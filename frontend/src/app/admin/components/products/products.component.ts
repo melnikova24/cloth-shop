@@ -42,6 +42,7 @@ export class ProductsComponent implements OnInit, OnDestroy  {
   products!: Product[];
   subscription!: Subscription;
   filterForm!: FormGroup;
+  isOpen: boolean = true;
 
   constructor(private fb: FormBuilder, private categoriesService: CategoriesService, private productService: ProductsService, private queryParamsService: QueryParamsService, private cd: ChangeDetectorRef) { }
 
@@ -60,6 +61,10 @@ export class ProductsComponent implements OnInit, OnDestroy  {
   clear() {
     this.filterForm.reset();
     this.getProducts()
+  }
+
+  toggleSidebar() {
+    this.isOpen = !this.isOpen
   }
 
   selectCategory(categoryId: ICategory) {

@@ -33,6 +33,15 @@
   position: relative;
 }
 
+
+.container-mobile {
+  display: none;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .title {
   font-weight: 700;
   font-size: 40px;
@@ -382,9 +391,13 @@
 
 @media screen and (max-width: 991px) {
   .start {
-    .container {
+    .container-mobile {
       padding-right: 0;
       padding-left: 0;
+      display: block;
+    }
+    .container {
+      display: none;
     }
     .carousel-caption {
       color: #694444;

@@ -15,6 +15,7 @@ import {FavoritesService} from "../../shared/services/favorites.service";
 })
 export class MainComponent implements OnInit {
   images = [1, 2, 3].map((n) => `/assets/slides/slide-${n}.png`);
+  mobileImages = [1, 2, 3].map((n) => `/assets/slides/slide1-${n}.jpg`);
   cartItems: CartType = {} as CartType;
   latestProducts: Product[] = [];
   constructor(private cartService: CartService, private productService: ProductsService, private favoritesService: FavoritesService) {

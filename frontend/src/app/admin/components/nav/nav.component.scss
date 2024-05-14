@@ -29,6 +29,15 @@
     height: 1px;
     background-color: #514d44;
   }
+}
 
+@media screen and (max-width: 500px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  .nav-link {
+    padding: 0;
+  }
 }

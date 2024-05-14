@@ -1,10 +1,10 @@
 
 <div class="main-center">
-  <form class="main-sidebar" [formGroup]="filterForm">
-    <span class="main-sidebar-title">Фильтры</span>
-    <div class="main-filters">
+  <form class="main-sidebar" [formGroup]="filterForm" >
+    <span class="main-sidebar-title" (click)="toggleSidebar()">Фильтры</span>
+    <div class="main-filters" [ngClass]="{'active': isOpen}">
       <span class="main-filters-subtitle">Поиск</span>
-      <input type="text" class="main-filters-search" formControlName="name">
+      <input type="text" class="main-filters-search" formControlName="name" placeholder="Поиск...">
       <span class="main-filters-subtitle">Категория</span>
       <div class="main-filters-categories">
         <div class="row">
@@ -59,6 +59,7 @@
   </form>
   <div class="main-content">
     <table class="table table-striped">
+      <span *ngIf="products.length === 0" class="empty">Список пуст</span>
       <thead>
       <tr>
         <th scope="col">#</th>

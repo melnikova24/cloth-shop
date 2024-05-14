@@ -1,1 +1,18 @@
-<p>category-edit-form works!</p>
+<form class="product" [formGroup]="formGroup1">
+  <input type="text" class="product-name" formControlName="name" placeholder="Название">
+  <input type="text" class="product-name" formControlName="description" placeholder="Описание">
+  <div class="row">
+    <div class="col flex">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>
+          <span *ngIf="selectedSubtype.length < 1">Выберите тип</span>
+          <span *ngIf="selectedSubtype.length > 0">{{ selectedSubtype[0] }}</span>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+          <button ngbDropdownItem (click)="changeType(subType)" *ngFor="let subType of subtypes">{{ subType[0] }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="submit()" class="add-btn">Сохранить</button>
+</form>

@@ -12,6 +12,7 @@
       <img src="../../assets/icons/fav.svg" alt="избранное" class="nav-icon" routerLink="favorite">
       <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="cart" >
       <img src="../../assets/icons/menu.svg" alt="меню" class="nav-icon2" (click)="toggle()" >
+      <img src="../../assets/icons/exit.svg" alt="меню" class="nav-icon" *ngIf="isAuth" (click)="logout()">
     </div>
   </div>
   <div [ngClass]="{'mobile': true, 'active': isOpen }">

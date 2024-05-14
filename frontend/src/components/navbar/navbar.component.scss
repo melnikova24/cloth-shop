@@ -65,22 +65,9 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 991px) {
-  .nav {
-
-    &-link {
-      display: none;
-    }
-    &-icon {
-      display: none;
-    }
-    &-icon2 {
-      display: block;
-    }
-  }
-}
 
 .mobile {
+  display: none;
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
@@ -91,7 +78,7 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  display: flex;
+
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -121,5 +108,23 @@
     display: flex;
     gap: 6px;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .nav {
+
+    &-link {
+      display: none;
+    }
+    &-icon {
+      display: none;
+    }
+    &-icon2 {
+      display: block;
+    }
+  }
+  .mobile {
+    display: flex;
   }
 }

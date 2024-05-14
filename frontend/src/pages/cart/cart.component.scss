@@ -59,6 +59,12 @@
 
     td {
       vertical-align: top;
+      &:nth-child(3) {
+        div {
+          max-height: 100px;
+          overflow: hidden;
+        }
+      }
     }
   }
 }
@@ -168,4 +174,22 @@
   min-height: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+  .subcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .end {
+    //margin: 0 auto;
+    width: 250px;
+  }
+
+  .subcontainer1 {
+    max-width: 100%;
+    overflow: scroll;
+  }
 }

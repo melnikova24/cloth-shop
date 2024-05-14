@@ -8,30 +8,36 @@
       </div>
     </div>
     <div class="subcontainer">
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">Модель</th>
-          <th scope="col">Название</th>
-          <th scope="col">Описание</th>
-          <th scope="col">Размер</th>
-          <th scope="col">Цена</th>
-          <th scope="col">Итого</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let product of products">
-          <td><img [src]="product.variants[0].photos[0]" alt="" class="table-img"></td>
-          <td>{{product.name}}</td>
-          <td>{{product.description}}</td>
-          <td>{{product.variants[0].size}}</td>
-          <td>{{product.variants[0].price}}</td>
-          <td class="overflow-hidden" >
-            <img src="assets/icons/delete.svg" alt="" class="table-icon" (click)="addToCart(product)">
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="subcontainer1">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Модель</th>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Размер</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Действия</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of products">
+            <td><img [src]="product.variants[0].photos[0]" alt="" class="table-img"></td>
+            <td>{{product.name}}</td>
+            <td>
+              <div>
+                {{product.description}}
+              </div>
+            </td>
+            <td>{{product.variants[0].size}}</td>
+            <td>{{product.variants[0].price}}</td>
+            <td class="overflow-hidden" >
+              <img src="assets/icons/delete.svg" alt="" class="table-icon" (click)="addToCart(product)">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="end">
         <div class="end-header">
           <span>Кол-во</span>
@@ -45,6 +51,5 @@
         <button class="buy">Оформить заказ</button>
       </div>
     </div>
-
   </div>
 </section>

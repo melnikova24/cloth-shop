@@ -163,12 +163,37 @@
   color: #7c7769;
   background-color: transparent;
   border-color: #7c7769;
-  width: 120px !important;
+  width: 120px;
   transition: .3s all;
 
   &:hover {
     background: #5e5b50;
     color: white;
     transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    max-width: 100% ;
+    overflow-x: scroll;
+    padding-top: 12px;
+  }
+  .table {
+    max-width: 100% ;
+    td {
+      &:nth-child(1) {
+        max-width: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  .btn2 {
+    width: 50%;
   }
 }
