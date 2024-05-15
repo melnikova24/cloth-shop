@@ -16,6 +16,7 @@
     </div>
   </div>
   <div [ngClass]="{'mobile': true, 'active': isOpen }">
+    <img src="../../assets/icons/menu.svg" alt="меню" class="nav-icon-close" (click)="toggle()" >
     <div class="mobile-links">
       <span routerLink="" class="mobile-link" (click)="toggle()">Главная</span>
       <span routerLink="catalog/children" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Малыши</span>
