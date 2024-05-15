@@ -24,7 +24,7 @@ export const routes: Routes = [
   { path: "catalog/:type", component: CatalogComponent },
   { path: "catalog/:type/:id", component: ProductComponent },
   { path: "cart", component: CartComponent, canActivate: [authActivateGuard] },
-  { path: "favorite", component: FavoriteComponent, canActivate: [authActivateGuard] },
+  { path: "favorite", component: FavoriteComponent },
   { path: "contacts", component: ContactsComponent },
   { path: "about", component: AboutusComponent },
   { path: "faq", component: FaqComponent },

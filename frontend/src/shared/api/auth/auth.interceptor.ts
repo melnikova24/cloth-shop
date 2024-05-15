@@ -19,8 +19,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
   // @ts-ignore
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (req.url === "http://localhost:5000/api/login") {
-      this.loaderService.setLoading(true);
+    this.loaderService.setLoading(true);
+    if (req.url.includes('login')) {
+      this.loaderService.setLoading(true, 'auth');
     }
     const accessToken = this.storageService.getUser().accessToken;
 
@@ -46,12 +47,12 @@ export class AuthInterceptor implements HttpInterceptor {
       })
       ,
       finalize(() => {
-        this.loaderService.setLoading(false)
-        if (req.url === "http://localhost:5000/api/login") {
-          setTimeout(() => this.loaderService.setLoading(false), 5000);
-        } else {
-          // this.loaderService.setLoading(false)
-        }
+        this.loaderService.setLoading(false, '');
+        // if (req.url === "http://localhost:5000/api/login") {
+        //   setTimeout(() => this.loaderService.setLoading(false), 5000);
+        // } else {
+        //   // this.loaderService.setLoading(false)
+        // }
       })
     );
   }
