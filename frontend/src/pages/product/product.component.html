@@ -35,7 +35,7 @@
         <div class="product-buttons">
           <button (click)="addToCart(product)" [ngClass]="{'active':product.inCart}">
             <img src="assets/icons/cart.svg" alt="" >
-            <span *ngIf="!product.inCart">Добавить в корзину</span>
+            <span *ngIf="!product.inCart">В корзину</span>
             <span *ngIf="product.inCart">В корзине</span>
           </button>
           <button (click)="addToFavorite(product)" [ngClass]="{'active':product.inFavorite}">
