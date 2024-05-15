@@ -11,8 +11,10 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: process.env.ORIGIN,
+    origin: [process.env.ORIGIN, 'http://localhost:4200'],
     // origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }
 
@@ -23,7 +25,8 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //     console.log(req.method, req.url);
 //     next();
 // })
-app.use('/api', router);
+// app.use('/api', router);
+app.use(router);
 app.use(errorMiddleware);
 
 const start = async () => {

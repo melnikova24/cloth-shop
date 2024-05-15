@@ -81,6 +81,16 @@
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 230px;
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .end {

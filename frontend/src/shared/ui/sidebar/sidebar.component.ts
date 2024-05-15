@@ -82,6 +82,7 @@ export class SidebarComponent implements OnInit {
       this.subtypesService.getSubtypes().subscribe({
         next: data => {
           this.subTypes = data
+          console.log(data, EngRusTypes[params['type']])
           this.categoriesService.getCategories(data[EngRusTypes[this.type]]).subscribe({
             next: data => {
               this.categories = data
@@ -92,7 +93,7 @@ export class SidebarComponent implements OnInit {
             }
           })
           // @ts-ignore
-          this.productsService.getProductFilters(data[EngRusTypes[this.type]]).subscribe({
+          this.productsService.getProductFilters(data[EngRusTypes[params['type']]]).subscribe({
             next: data => {
               this.filters = data
               this.cd.detectChanges()

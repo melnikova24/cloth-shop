@@ -5,6 +5,7 @@ import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {ProductsService} from "../../shared/api/products/products.service";
 import {FavoritesService} from "../../shared/services/favorites.service";
 import {RouterLink} from "@angular/router";
+import {LoaderService} from "../../shared/services/loader.service";
 
 @Component({
   selector: 'app-product-list',
@@ -22,8 +23,10 @@ import {RouterLink} from "@angular/router";
 export class ProductListComponent  {
   @Input() products: Product[] = [];
   @Input() cartItems: CartType = {} as CartType;
+  @Input() isLoading: boolean = false
 
-  constructor(private cartService: CartService, private favoritesService: FavoritesService, private cd: ChangeDetectorRef) {
+
+  constructor(private cartService: CartService, private favoritesService: FavoritesService, private cd: ChangeDetectorRef, private loaderService: LoaderService) {
 
   }
 

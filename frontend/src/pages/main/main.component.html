@@ -86,7 +86,7 @@
         <div class="product-bottom">
           <span class="product-price">{{ product.variants[0].price }} Р</span>
           <div class="product-btns">
-            <img src="assets/icons/cart.svg" (click)="addToCart(product)" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">
+<!--            <img src="assets/icons/cart.svg" (click)="addToCart(product)" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">-->
             <img src="assets/icons/fav.svg" (click)="addToFavorite(product)" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
           </div>
         </div>

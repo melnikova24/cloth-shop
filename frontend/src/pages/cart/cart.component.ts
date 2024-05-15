@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {CartService, CartType, Product} from "../../shared/api";
 import {ProductsService} from "../../shared/api/products/products.service";
 import {FavoritesService} from "../../shared/services/favorites.service";
+import {LoaderService} from "../../shared/services/loader.service";
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ import {FavoritesService} from "../../shared/services/favorites.service";
 export class CartComponent implements OnInit, OnDestroy {
   products!: Product[];
   cartItems: CartType = {} as CartType;
-  constructor(private cartService: CartService, private productService: ProductsService) {
+  constructor(private cartService: CartService, private productService: ProductsService, public loaderService: LoaderService) {
   }
 
   ngOnInit() {

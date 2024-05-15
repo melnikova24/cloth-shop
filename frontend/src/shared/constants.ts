@@ -1,5 +1,5 @@
-export const BASE_URL = 'http://localhost:5000/api'
-
+export const BASE_URL = 'http://localhost:5000'
+// export const BASE_URL = 'https://backend-iota-cyan.vercel.app'
 export const SIZES = [
   'XS',
   'S',

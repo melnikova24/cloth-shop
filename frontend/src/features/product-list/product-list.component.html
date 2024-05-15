@@ -10,5 +10,6 @@
       </div>
     </div>
   </div>
-  <span *ngIf="products.length === 0" class="empty">Нет товаров</span>
+  <span *ngIf="isLoading" class="loader">Загрузка...</span>
+  <span *ngIf="products.length === 0 && !isLoading" class="empty">Нет товаров</span>
 </div>

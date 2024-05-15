@@ -1,7 +1,7 @@
 <nav class="nav">
   <div class="container">
     <div class="nav-links">
-      <img src="../../assets/logo.png" alt="logo" class="nav-logo" routerLink="" >
+      <img src="../../assets/logo-no-background.svg" alt="logo" class="nav-logo" routerLink="" >
       <span routerLink="" class="nav-link">Главная</span>
       <span routerLink="catalog/children" class="nav-link" routerLinkActive="active" >Малыши</span>
       <span routerLink="catalog/girls" class="nav-link" routerLinkActive="active">Девочки</span>
@@ -22,7 +22,7 @@
       <span routerLink="catalog/girls" class="mobile-link" routerLinkActive="active" (click)="toggle()">Девочки</span>
       <span routerLink="catalog/boys" class="mobile-link" routerLinkActive="active" (click)="toggle()">Мальчики</span>
       <span routerLink="cart" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Корзина</span>
-      <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Избранное</span>
+      <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Избранное</span>
       <span routerLink="admin" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAdmin">Админ</span>
     </div>
     <div class="mobile-bottom" (click)="logout()" *ngIf="isAuth"  >

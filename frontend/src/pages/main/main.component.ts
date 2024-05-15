@@ -55,12 +55,12 @@ export class MainComponent implements OnInit {
       })
       this.latestProducts = productList
       try {
-        this.cartService.getCartItems('main').subscribe(cartItems => {
-          this.cartItems.products = cartItems.products
+        // this.cartService.getCartItems('main').subscribe(cartItems => {
+        //   this.cartItems.products = cartItems.products
           this.latestProducts = productList.map(item => {
             return {...item, inCart: this.cartItems.products.some(cartItem => cartItem === item._id)}
           })
-        })
+        // })
       } catch (e) {
         console.log(e)
       }

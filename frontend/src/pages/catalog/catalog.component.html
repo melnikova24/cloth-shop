@@ -12,6 +12,8 @@
         <app-sidebar [isOpen]="!isOpen" (updateProducts)="updateProducts($event)"></app-sidebar>
       </div>
     </div>
-    <app-product-list [products]="products" [cartItems]="cartItems"></app-product-list>
+<!--    <span *ngIf="isLoading" class="loader">Загрузка...</span>-->
+<!--    <span *ngIf="!isLoading" class="loader">{{ products.length }}</span>-->
+    <app-product-list [isLoading]="isLoading" [products]="products" [cartItems]="cartItems" ></app-product-list>
   </div>
 </section>

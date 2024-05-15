@@ -20,7 +20,8 @@
         </div>
       </div>
     </div>
-    <div class="sidebar-item" *ngIf="filters.sizes.length !== 0">
+<!--    <div class="sidebar-item" *ngIf="filters.sizes.length !== 0">-->
+    <div class="sidebar-item">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn " id="dropdownBasic2" ngbDropdownToggle>
             <span *ngIf="!filtersForm.get('sizes')?.value">Цвет</span>
@@ -31,7 +32,8 @@
           </div>
         </div>
     </div>
-    <div class="sidebar-item" *ngIf="filters.colors.length !== 0">
+<!--    <div class="sidebar-item" *ngIf="filters.colors.length !== 0">-->
+    <div class="sidebar-item" >
       <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn " id="dropdownBasic3" ngbDropdownToggle>
             <span *ngIf="!filtersForm.get('colors')?.value">Размер</span>
