@@ -8,12 +8,13 @@ const VariantSchema = new mongoose.Schema({
     price: { type: Number, required: true }
 });
 
-const productModel = new mongoose.Schema({
+export const productModel = new mongoose.Schema({
     categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category" , required: true },
     subTypeId: { type: mongoose.Schema.Types.ObjectId, ref: "SubType" , required: true },
     name: { type: String, required: true, min: 2, max: 80 },
     description: { type: String },
-    variants: [VariantSchema]
+    variants: [VariantSchema],
+    selectedVariant: { type: VariantSchema }
 })
 
 export const productModelM = mongoose.model("Product", productModel);

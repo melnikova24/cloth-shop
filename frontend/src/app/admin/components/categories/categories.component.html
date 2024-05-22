@@ -54,7 +54,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
-    <app-category-edit-form (getCategories)="getCategories()"  [selectedCategory]="selectedCategory" (closeModal)="modal.close('Save click')"></app-category-edit-form>
+    <app-category-edit-form (getCategories)="getCategories()" [selectedCategory]="selectedCategory" (closeModal)="modal.close('Save click')"></app-category-edit-form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>

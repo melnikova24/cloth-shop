@@ -22,16 +22,16 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let product of products">
-            <td><img [src]="product.variants[0].photos[0]" alt="" class="table-img"></td>
+          <tr *ngFor="let product of cartItems.productsList">
+            <td><img [src]="product.selectedVariant?.photos?.[0]" alt="" class="table-img"></td>
             <td>{{product.name}}</td>
             <td>
               <div>
                 {{product.description}}
               </div>
             </td>
-            <td>{{product.variants[0].size}}</td>
-            <td>{{product.variants[0].price}}</td>
+            <td>{{product.selectedVariant?.size}}</td>
+            <td>{{product.selectedVariant?.price}}</td>
             <td class="overflow-hidden" >
               <img src="assets/icons/delete.svg" alt="" class="table-icon" (click)="addToCart(product)">
             </td>
@@ -49,7 +49,7 @@
           <span>Итого</span>
           <span>{{getCartSum()}} р.</span>
         </div>
-        <button class="buy">Оформить заказ</button>
+        <button class="buy" (click)="submit()">Оформить заказ</button>
       </div>
     </div>
   </div>

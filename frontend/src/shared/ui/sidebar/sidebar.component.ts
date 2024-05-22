@@ -9,7 +9,6 @@ import {
   ViewChildren
 } from '@angular/core';
 
-import {CheckboxComponent} from "../../../components/checkbox/checkbox.component";
 import {ProductsService} from "../../api/products/products.service";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ISubtype, SubtypeService} from "../../api/subtypes";
@@ -30,13 +29,12 @@ import {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CheckboxComponent, FormsModule, ReactiveFormsModule, NgForOf, OnlyNumberDirective, NgIf, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, NgClass],
+  imports: [FormsModule, ReactiveFormsModule, NgForOf, OnlyNumberDirective, NgIf, NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, NgClass],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent implements OnInit {
-  @ViewChildren(CheckboxComponent) checkboxes!: QueryList<CheckboxComponent>
   subTypes!: Record<string, string>;
   type!: string;
   filtersForm!: FormGroup;

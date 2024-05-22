@@ -1,0 +1,929 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.0.4",
+  "deps": {
+    "nx": "^19.0.4"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "ClothShop": [
+        {
+          "file": "frontend/.editorconfig",
+          "hash": "17241496168097493888"
+        },
+        {
+          "file": "frontend/.gitignore",
+          "hash": "7817892125650096634"
+        },
+        {
+          "file": "frontend/README.md",
+          "hash": "9603305657367226180"
+        },
+        {
+          "file": "frontend/nx.json",
+          "hash": "8677327175861115552"
+        },
+        {
+          "file": "frontend/package-lock.json",
+          "hash": "836501730919434371"
+        },
+        {
+          "file": "frontend/package.json",
+          "hash": "12437786223624575255",
+          "deps": [
+            "npm:tslib",
+            "npm:nx"
+          ]
+        },
+        {
+          "file": "frontend/project.json",
+          "hash": "8595927067168148361"
+        },
+        {
+          "file": "frontend/src/app/admin/admin-routing.module.ts",
+          "hash": "17677862497346086288"
+        },
+        {
+          "file": "frontend/src/app/admin/admin.module.ts",
+          "hash": "8170913898309295827"
+        },
+        {
+          "file": "frontend/src/app/admin/components/admin-dashboard/admin-dashboard.component.html",
+          "hash": "5496447904647420582"
+        },
+        {
+          "file": "frontend/src/app/admin/components/admin-dashboard/admin-dashboard.component.scss",
+          "hash": "9622538578142964223"
+        },
+        {
+          "file": "frontend/src/app/admin/components/admin-dashboard/admin-dashboard.component.ts",
+          "hash": "301116312521786939"
+        },
+        {
+          "file": "frontend/src/app/admin/components/categories/categories.component.html",
+          "hash": "2707832344381931138"
+        },
+        {
+          "file": "frontend/src/app/admin/components/categories/categories.component.scss",
+          "hash": "16014288279437187530"
+        },
+        {
+          "file": "frontend/src/app/admin/components/categories/categories.component.ts",
+          "hash": "2932145552623779743"
+        },
+        {
+          "file": "frontend/src/app/admin/components/nav/nav.component.html",
+          "hash": "11405609304424016738"
+        },
+        {
+          "file": "frontend/src/app/admin/components/nav/nav.component.scss",
+          "hash": "7616580810657083680"
+        },
+        {
+          "file": "frontend/src/app/admin/components/nav/nav.component.ts",
+          "hash": "13818354583102867806"
+        },
+        {
+          "file": "frontend/src/app/admin/components/products/products.component.html",
+          "hash": "9597932562675378168"
+        },
+        {
+          "file": "frontend/src/app/admin/components/products/products.component.scss",
+          "hash": "4799774495664934615"
+        },
+        {
+          "file": "frontend/src/app/admin/components/products/products.component.ts",
+          "hash": "8974791672690927278"
+        },
+        {
+          "file": "frontend/src/app/app.component.html",
+          "hash": "6511258046030964803"
+        },
+        {
+          "file": "frontend/src/app/app.component.scss",
+          "hash": "11605427713162539626"
+        },
+        {
+          "file": "frontend/src/app/app.component.ts",
+          "hash": "6127781405907891812"
+        },
+        {
+          "file": "frontend/src/app/app.config.ts",
+          "hash": "18180988195323404385"
+        },
+        {
+          "file": "frontend/src/app/app.routes.ts",
+          "hash": "987460051815944853"
+        },
+        {
+          "file": "frontend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "frontend/src/assets/arrow_checkbox.svg",
+          "hash": "4025328285962863505"
+        },
+        {
+          "file": "frontend/src/assets/backgrounds/main-bg.png",
+          "hash": "1077146614948766686"
+        },
+        {
+          "file": "frontend/src/assets/categories/babies-m.jpg",
+          "hash": "7449654907528255539"
+        },
+        {
+          "file": "frontend/src/assets/categories/babies-m1.jpg",
+          "hash": "7706618653349708657"
+        },
+        {
+          "file": "frontend/src/assets/categories/babies-s.jpg",
+          "hash": "14280603658980608639"
+        },
+        {
+          "file": "frontend/src/assets/categories/babies.jpg",
+          "hash": "10526421280721079491"
+        },
+        {
+          "file": "frontend/src/assets/categories/boys-s.jpg",
+          "hash": "16424494087557372669"
+        },
+        {
+          "file": "frontend/src/assets/categories/boys.jpg",
+          "hash": "12151062590745149428"
+        },
+        {
+          "file": "frontend/src/assets/categories/girls-s.jpg",
+          "hash": "2255652148914268862"
+        },
+        {
+          "file": "frontend/src/assets/categories/girls.jpg",
+          "hash": "7891661051248704410"
+        },
+        {
+          "file": "frontend/src/assets/icons/about/Frame394.jpg",
+          "hash": "6170875223606512400"
+        },
+        {
+          "file": "frontend/src/assets/icons/about/brand_diamond.svg",
+          "hash": "12508898098952681317"
+        },
+        {
+          "file": "frontend/src/assets/icons/about/brand_heart.svg",
+          "hash": "1771060658443850516"
+        },
+        {
+          "file": "frontend/src/assets/icons/about/brand_sun.svg",
+          "hash": "14668793322579534838"
+        },
+        {
+          "file": "frontend/src/assets/icons/cart.svg",
+          "hash": "5806197463745501384"
+        },
+        {
+          "file": "frontend/src/assets/icons/delete.svg",
+          "hash": "7475298133619495318"
+        },
+        {
+          "file": "frontend/src/assets/icons/exit.svg",
+          "hash": "9324170059804960480"
+        },
+        {
+          "file": "frontend/src/assets/icons/fav.svg",
+          "hash": "3890872234894501915"
+        },
+        {
+          "file": "frontend/src/assets/icons/favorite.svg",
+          "hash": "14369465125058183897"
+        },
+        {
+          "file": "frontend/src/assets/icons/menu.svg",
+          "hash": "5779751551674561298"
+        },
+        {
+          "file": "frontend/src/assets/icons/profile.svg",
+          "hash": "1090199237604051971"
+        },
+        {
+          "file": "frontend/src/assets/logo-no-background.svg",
+          "hash": "5881397613945497982"
+        },
+        {
+          "file": "frontend/src/assets/logo.png",
+          "hash": "3318681563574150811"
+        },
+        {
+          "file": "frontend/src/assets/pedro-snd.mp3",
+          "hash": "15683764044068031947"
+        },
+        {
+          "file": "frontend/src/assets/prod.jpg",
+          "hash": "10063158133011999512"
+        },
+        {
+          "file": "frontend/src/assets/product.jpg",
+          "hash": "13441539653323777938"
+        },
+        {
+          "file": "frontend/src/assets/product2.jpg",
+          "hash": "17462213310386386988"
+        },
+        {
+          "file": "frontend/src/assets/racoon-pedro.gif",
+          "hash": "6013268423488998145"
+        },
+        {
+          "file": "frontend/src/assets/slides/backup-1.png",
+          "hash": "9233039147980831773"
+        },
+        {
+          "file": "frontend/src/assets/slides/backup-2.png",
+          "hash": "6404017722623131777"
+        },
+        {
+          "file": "frontend/src/assets/slides/backup-3.png",
+          "hash": "341368826061069522"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide-1.png",
+          "hash": "1600404799960498786"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide-2.png",
+          "hash": "17411598419956569212"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide-3.png",
+          "hash": "7668237378666825923"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide1-1.jpg",
+          "hash": "14010199007840922290"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide1-2.jpg",
+          "hash": "4078440707115945585"
+        },
+        {
+          "file": "frontend/src/assets/slides/slide1-3.jpg",
+          "hash": "1032029307189941192"
+        },
+        {
+          "file": "frontend/src/components/checkbox/checkbox.component.html",
+          "hash": "9176449707792392153"
+        },
+        {
+          "file": "frontend/src/components/checkbox/checkbox.component.scss",
+          "hash": "2346863137946119579"
+        },
+        {
+          "file": "frontend/src/components/checkbox/checkbox.component.ts",
+          "hash": "230102064386370584"
+        },
+        {
+          "file": "frontend/src/components/footer/footer.component.html",
+          "hash": "10340850697845929208"
+        },
+        {
+          "file": "frontend/src/components/footer/footer.component.scss",
+          "hash": "3819590906235847156"
+        },
+        {
+          "file": "frontend/src/components/footer/footer.component.ts",
+          "hash": "17072721027877230386"
+        },
+        {
+          "file": "frontend/src/components/index.ts",
+          "hash": "17735009590458639234"
+        },
+        {
+          "file": "frontend/src/components/modal/modal.component.html",
+          "hash": "15832741588705204961"
+        },
+        {
+          "file": "frontend/src/components/modal/modal.component.scss",
+          "hash": "15379238069688075423"
+        },
+        {
+          "file": "frontend/src/components/modal/modal.component.ts",
+          "hash": "7985579868805368042"
+        },
+        {
+          "file": "frontend/src/components/navbar/navbar.component.html",
+          "hash": "3313392745308758111"
+        },
+        {
+          "file": "frontend/src/components/navbar/navbar.component.scss",
+          "hash": "1689770109453292230"
+        },
+        {
+          "file": "frontend/src/components/navbar/navbar.component.ts",
+          "hash": "12662306846408587071"
+        },
+        {
+          "file": "frontend/src/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "frontend/src/features/category-edit-form/category-edit-form.component.html",
+          "hash": "6576490162242104744"
+        },
+        {
+          "file": "frontend/src/features/category-edit-form/category-edit-form.component.scss",
+          "hash": "12095072997288626318"
+        },
+        {
+          "file": "frontend/src/features/category-edit-form/category-edit-form.component.ts",
+          "hash": "2266502630005883793"
+        },
+        {
+          "file": "frontend/src/features/category-form/category-form.component.css",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "frontend/src/features/category-form/category-form.component.html",
+          "hash": "3826972801308644667"
+        },
+        {
+          "file": "frontend/src/features/category-form/category-form.component.scss",
+          "hash": "6130138888337216246"
+        },
+        {
+          "file": "frontend/src/features/category-form/category-form.component.ts",
+          "hash": "17662357966389738494"
+        },
+        {
+          "file": "frontend/src/features/loginForm/loginForm.component.html",
+          "hash": "7979718215561449003"
+        },
+        {
+          "file": "frontend/src/features/loginForm/loginForm.component.scss",
+          "hash": "16095952917482777180"
+        },
+        {
+          "file": "frontend/src/features/loginForm/loginForm.component.ts",
+          "hash": "1925561041002484389"
+        },
+        {
+          "file": "frontend/src/features/product-edit-form/product-edit-form.component.html",
+          "hash": "9870516952647308966"
+        },
+        {
+          "file": "frontend/src/features/product-edit-form/product-edit-form.component.scss",
+          "hash": "12420925335784288626"
+        },
+        {
+          "file": "frontend/src/features/product-edit-form/product-edit-form.component.ts",
+          "hash": "12339200159520121078"
+        },
+        {
+          "file": "frontend/src/features/product-form/product-form.component.html",
+          "hash": "3691819124089414484"
+        },
+        {
+          "file": "frontend/src/features/product-form/product-form.component.scss",
+          "hash": "12420925335784288626"
+        },
+        {
+          "file": "frontend/src/features/product-form/product-form.component.ts",
+          "hash": "9957007092252886175"
+        },
+        {
+          "file": "frontend/src/features/product-list/product-list.component.html",
+          "hash": "6471804773545513236"
+        },
+        {
+          "file": "frontend/src/features/product-list/product-list.component.scss",
+          "hash": "17289453277066021584"
+        },
+        {
+          "file": "frontend/src/features/product-list/product-list.component.ts",
+          "hash": "2368122841602318699"
+        },
+        {
+          "file": "frontend/src/features/registerForm/registerForm.component.html",
+          "hash": "10337126171824823960"
+        },
+        {
+          "file": "frontend/src/features/registerForm/registerForm.component.scss",
+          "hash": "8659205942787397709"
+        },
+        {
+          "file": "frontend/src/features/registerForm/registerForm.component.ts",
+          "hash": "16573121466370666967"
+        },
+        {
+          "file": "frontend/src/index.html",
+          "hash": "3390673686700283029"
+        },
+        {
+          "file": "frontend/src/main.ts",
+          "hash": "8817440553296964956"
+        },
+        {
+          "file": "frontend/src/pages/aboutus/aboutus.component.html",
+          "hash": "8950558608311604313"
+        },
+        {
+          "file": "frontend/src/pages/aboutus/aboutus.component.scss",
+          "hash": "16162142953454052351"
+        },
+        {
+          "file": "frontend/src/pages/aboutus/aboutus.component.ts",
+          "hash": "17960120945141127133"
+        },
+        {
+          "file": "frontend/src/pages/cart/cart.component.html",
+          "hash": "13601336111994531132"
+        },
+        {
+          "file": "frontend/src/pages/cart/cart.component.scss",
+          "hash": "6963852127107424948"
+        },
+        {
+          "file": "frontend/src/pages/cart/cart.component.ts",
+          "hash": "10020592842512043933"
+        },
+        {
+          "file": "frontend/src/pages/catalog/catalog.component - Copy.ts",
+          "hash": "11511534495851124699"
+        },
+        {
+          "file": "frontend/src/pages/catalog/catalog.component.html",
+          "hash": "12613083376846838173"
+        },
+        {
+          "file": "frontend/src/pages/catalog/catalog.component.scss",
+          "hash": "2813102247493134079"
+        },
+        {
+          "file": "frontend/src/pages/catalog/catalog.component.ts",
+          "hash": "5225660586609618228"
+        },
+        {
+          "file": "frontend/src/pages/contacts/contacts.component.html",
+          "hash": "2289010808045524394"
+        },
+        {
+          "file": "frontend/src/pages/contacts/contacts.component.scss",
+          "hash": "2479186900159221829"
+        },
+        {
+          "file": "frontend/src/pages/contacts/contacts.component.ts",
+          "hash": "4736143509080808626"
+        },
+        {
+          "file": "frontend/src/pages/faq/faq.component.html",
+          "hash": "10588218289746699882"
+        },
+        {
+          "file": "frontend/src/pages/faq/faq.component.scss",
+          "hash": "9129200904378804946"
+        },
+        {
+          "file": "frontend/src/pages/faq/faq.component.ts",
+          "hash": "1791624831840114785"
+        },
+        {
+          "file": "frontend/src/pages/favorite/favorite.component.html",
+          "hash": "11144987861401446741"
+        },
+        {
+          "file": "frontend/src/pages/favorite/favorite.component.scss",
+          "hash": "3275678517299626570"
+        },
+        {
+          "file": "frontend/src/pages/favorite/favorite.component.ts",
+          "hash": "1292502028289056383"
+        },
+        {
+          "file": "frontend/src/pages/index.ts",
+          "hash": "9893584800508210412"
+        },
+        {
+          "file": "frontend/src/pages/login/login.component.html",
+          "hash": "14097056272219066176"
+        },
+        {
+          "file": "frontend/src/pages/login/login.component.scss",
+          "hash": "4097588978237681492"
+        },
+        {
+          "file": "frontend/src/pages/login/login.component.ts",
+          "hash": "15919164492039953829"
+        },
+        {
+          "file": "frontend/src/pages/main/main.component.html",
+          "hash": "3188574690672241486"
+        },
+        {
+          "file": "frontend/src/pages/main/main.component.scss",
+          "hash": "7519289327682123776"
+        },
+        {
+          "file": "frontend/src/pages/main/main.component.ts",
+          "hash": "7350748045268529228"
+        },
+        {
+          "file": "frontend/src/pages/not-found/not-found.component.css",
+          "hash": "15036214574332298676"
+        },
+        {
+          "file": "frontend/src/pages/not-found/not-found.component.html",
+          "hash": "228739299707751193"
+        },
+        {
+          "file": "frontend/src/pages/not-found/not-found.component.ts",
+          "hash": "3039686612223023904"
+        },
+        {
+          "file": "frontend/src/pages/product/product.component.html",
+          "hash": "7622273407186254313"
+        },
+        {
+          "file": "frontend/src/pages/product/product.component.scss",
+          "hash": "8543141367565827246"
+        },
+        {
+          "file": "frontend/src/pages/product/product.component.ts",
+          "hash": "1838241642521536986"
+        },
+        {
+          "file": "frontend/src/pages/profile/profile.component.css",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "frontend/src/pages/profile/profile.component.html",
+          "hash": "11549371922144503726"
+        },
+        {
+          "file": "frontend/src/pages/profile/profile.component.ts",
+          "hash": "18406849593845223263"
+        },
+        {
+          "file": "frontend/src/pages/refund/refund.component.html",
+          "hash": "4993370654520367097"
+        },
+        {
+          "file": "frontend/src/pages/refund/refund.component.scss",
+          "hash": "2479186900159221829"
+        },
+        {
+          "file": "frontend/src/pages/refund/refund.component.ts",
+          "hash": "10061003490900677632"
+        },
+        {
+          "file": "frontend/src/pages/register/register.component.html",
+          "hash": "8922138840964557655"
+        },
+        {
+          "file": "frontend/src/pages/register/register.component.scss",
+          "hash": "8079457060278078214"
+        },
+        {
+          "file": "frontend/src/pages/register/register.component.ts",
+          "hash": "2844637419627395319"
+        },
+        {
+          "file": "frontend/src/shared/api/auth/auth.interceptor.ts",
+          "hash": "15432230833022986106"
+        },
+        {
+          "file": "frontend/src/shared/api/auth/auth.service.ts",
+          "hash": "14364361073967521661"
+        },
+        {
+          "file": "frontend/src/shared/api/auth/index.ts",
+          "hash": "9565145625196344555"
+        },
+        {
+          "file": "frontend/src/shared/api/auth/models.ts",
+          "hash": "17256256843930419928"
+        },
+        {
+          "file": "frontend/src/shared/api/cart/cart.service.ts",
+          "hash": "5539295197262603820"
+        },
+        {
+          "file": "frontend/src/shared/api/cart/index.ts",
+          "hash": "8824547749036475803"
+        },
+        {
+          "file": "frontend/src/shared/api/cart/models.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "frontend/src/shared/api/categories/categories.service.ts",
+          "hash": "4803602815390650937"
+        },
+        {
+          "file": "frontend/src/shared/api/categories/index.ts",
+          "hash": "4001512428906789789"
+        },
+        {
+          "file": "frontend/src/shared/api/categories/models.ts",
+          "hash": "2281898755547681764"
+        },
+        {
+          "file": "frontend/src/shared/api/index.ts",
+          "hash": "15914057817062747975"
+        },
+        {
+          "file": "frontend/src/shared/api/products/index.ts",
+          "hash": "10338699767459591602"
+        },
+        {
+          "file": "frontend/src/shared/api/products/models.ts",
+          "hash": "6295729826783467442"
+        },
+        {
+          "file": "frontend/src/shared/api/products/products.service.ts",
+          "hash": "5261029686386888238"
+        },
+        {
+          "file": "frontend/src/shared/api/subtypes/index.ts",
+          "hash": "13772764987620973807"
+        },
+        {
+          "file": "frontend/src/shared/api/subtypes/models.ts",
+          "hash": "9065612667849362692"
+        },
+        {
+          "file": "frontend/src/shared/api/subtypes/subtype.service.ts",
+          "hash": "10109970567022499022"
+        },
+        {
+          "file": "frontend/src/shared/constants.ts",
+          "hash": "2382001658918677785"
+        },
+        {
+          "file": "frontend/src/shared/directives/onlyNumber.directive.ts",
+          "hash": "13455523111139442904"
+        },
+        {
+          "file": "frontend/src/shared/guards/admin.guard.ts",
+          "hash": "5032581569174357597"
+        },
+        {
+          "file": "frontend/src/shared/guards/already-logged-in.guard.ts",
+          "hash": "3007581519987332758"
+        },
+        {
+          "file": "frontend/src/shared/guards/auth.guard.ts",
+          "hash": "15457409507131282819"
+        },
+        {
+          "file": "frontend/src/shared/helpers/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "frontend/src/shared/services/favorites.service.ts",
+          "hash": "5937410937204538432"
+        },
+        {
+          "file": "frontend/src/shared/services/loader.service.ts",
+          "hash": "5837648649786157807"
+        },
+        {
+          "file": "frontend/src/shared/services/query-params.service.ts",
+          "hash": "11920985554223687694"
+        },
+        {
+          "file": "frontend/src/shared/services/storage.service.ts",
+          "hash": "12412757907771386280"
+        },
+        {
+          "file": "frontend/src/shared/ui/alert/alert.component.html",
+          "hash": "11561186200612417580"
+        },
+        {
+          "file": "frontend/src/shared/ui/alert/alert.component.scss",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "frontend/src/shared/ui/alert/alert.component.ts",
+          "hash": "13467019794319320232"
+        },
+        {
+          "file": "frontend/src/shared/ui/sidebar/sidebar.component.html",
+          "hash": "17198908080651682326"
+        },
+        {
+          "file": "frontend/src/shared/ui/sidebar/sidebar.component.scss",
+          "hash": "15792609575910368223"
+        },
+        {
+          "file": "frontend/src/shared/ui/sidebar/sidebar.component.ts",
+          "hash": "13415967549010234176"
+        },
+        {
+          "file": "frontend/src/shared/ui/spinner/1.mp4",
+          "hash": "9539417124879625473"
+        },
+        {
+          "file": "frontend/src/shared/ui/spinner/spinner.component.html",
+          "hash": "5136171801783081210"
+        },
+        {
+          "file": "frontend/src/shared/ui/spinner/spinner.component.scss",
+          "hash": "11695498755739991700"
+        },
+        {
+          "file": "frontend/src/shared/ui/spinner/spinner.component.ts",
+          "hash": "7968512132377320250"
+        },
+        {
+          "file": "frontend/src/styles.scss",
+          "hash": "14091208535008912264"
+        },
+        {
+          "file": "frontend/tsconfig.app.json",
+          "hash": "366722516949793923"
+        },
+        {
+          "file": "frontend/tsconfig.json",
+          "hash": "3343339550490537441"
+        },
+        {
+          "file": "frontend/tsconfig.spec.json",
+          "hash": "5059954046679394591"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": "backend/.env.example",
+        "hash": "3990322524658435502"
+      },
+      {
+        "file": "backend/.gitignore",
+        "hash": "16726668132082327545"
+      },
+      {
+        "file": "backend/.idea/.gitignore",
+        "hash": "16259663310133185705"
+      },
+      {
+        "file": "backend/.idea/backend.iml",
+        "hash": "17628044544001142833"
+      },
+      {
+        "file": "backend/.idea/modules.xml",
+        "hash": "2075161720530415603"
+      },
+      {
+        "file": "backend/.idea/vcs.xml",
+        "hash": "10114517005702041235"
+      },
+      {
+        "file": "backend/1.txt",
+        "hash": "1019498884719887145"
+      },
+      {
+        "file": "backend/controllers/cartController.js",
+        "hash": "12601273911245050404"
+      },
+      {
+        "file": "backend/controllers/categoryController.js",
+        "hash": "3843910677815746221"
+      },
+      {
+        "file": "backend/controllers/orderController.js",
+        "hash": "17525485642170218643"
+      },
+      {
+        "file": "backend/controllers/productController.js",
+        "hash": "13359097592053409455"
+      },
+      {
+        "file": "backend/controllers/subtypeController.js",
+        "hash": "12438757777593418184"
+      },
+      {
+        "file": "backend/controllers/userController.js",
+        "hash": "11193265179096859896"
+      },
+      {
+        "file": "backend/dtos/user-dto.js",
+        "hash": "4713429535387158731"
+      },
+      {
+        "file": "backend/index.js",
+        "hash": "6240952723758437148"
+      },
+      {
+        "file": "backend/middlewares/adminMiddleware.js",
+        "hash": "549145676349135031"
+      },
+      {
+        "file": "backend/middlewares/authMiddleware.js",
+        "hash": "14722271566118037300"
+      },
+      {
+        "file": "backend/middlewares/errorMiddleware.js",
+        "hash": "13929568642516485584"
+      },
+      {
+        "file": "backend/models/cartModel.js",
+        "hash": "432542962771786125"
+      },
+      {
+        "file": "backend/models/categoryModel.js",
+        "hash": "2831051544120151805"
+      },
+      {
+        "file": "backend/models/orderModel.js",
+        "hash": "9684178647962896974"
+      },
+      {
+        "file": "backend/models/productModel.js",
+        "hash": "12635681652729506289"
+      },
+      {
+        "file": "backend/models/subType.js",
+        "hash": "1642961355872209133"
+      },
+      {
+        "file": "backend/models/tokenModel.js",
+        "hash": "7465394236335474703"
+      },
+      {
+        "file": "backend/models/userModel.js",
+        "hash": "16589833943106757927"
+      },
+      {
+        "file": "backend/package-lock.json",
+        "hash": "17835132112399472207"
+      },
+      {
+        "file": "backend/package.json",
+        "hash": "17999064243432883393"
+      },
+      {
+        "file": "backend/routers/router.js",
+        "hash": "8364929905478897780"
+      },
+      {
+        "file": "backend/services/cart-service.js",
+        "hash": "11540330834850032399"
+      },
+      {
+        "file": "backend/services/category-service.js",
+        "hash": "952957216541570005"
+      },
+      {
+        "file": "backend/services/db-service.js",
+        "hash": "10529761163155674082"
+      },
+      {
+        "file": "backend/services/order-service.js",
+        "hash": "5461381965127783656"
+      },
+      {
+        "file": "backend/services/product-service.js",
+        "hash": "15607440608133689666"
+      },
+      {
+        "file": "backend/services/subtype-service.js",
+        "hash": "16835904473753247604"
+      },
+      {
+        "file": "backend/services/token-service.js",
+        "hash": "10236954802449412938"
+      },
+      {
+        "file": "backend/services/user-service.js",
+        "hash": "11979244642985478989"
+      },
+      {
+        "file": "backend/utils/api-error.js",
+        "hash": "13359564031566065470"
+      },
+      {
+        "file": "backend/vercel.json",
+        "hash": "558973865013271492"
+      },
+      {
+        "file": "clothshop.categories.json",
+        "hash": "7411949439349150994"
+      },
+      {
+        "file": "clothshop.products.json",
+        "hash": "14303044192305314672"
+      },
+      {
+        "file": "clothshop.subtypes.json",
+        "hash": "18286391501334032074"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "932693932129729266"
+      },
+      {
+        "file": "package.json",
+        "hash": "11888496447445287544"
+      }
+    ]
+  }
+}

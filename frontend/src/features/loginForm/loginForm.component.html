@@ -16,5 +16,10 @@
   }
   <span class="login-label">Нет аккаунта? <span routerLink="/register">Регистрация</span></span>
   <button class="login-btn" [disabled]="loginForm.invalid">Войти</button>
+  @if (isLoginFailed) {
+    <div class="login-invalid-feedback">
+      {{errorMessage}}
+    </div>
+  }
 </form>
 

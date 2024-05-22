@@ -21,4 +21,5 @@ export type Product = {
   previewPhoto?: string
   inFavorite?: boolean
   inCart?: boolean
+  selectedVariant?: VariantProduct
 }

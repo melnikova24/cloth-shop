@@ -1,0 +1,69 @@
+
+.profile {
+    padding-top: 74px;
+    //background-color: #eae7dc;
+    min-height: 90vh;
+    padding-bottom: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .orders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .order {
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #514d44;
+    border-radius: 12px;
+    position: relative;
+  }
+  
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .item {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #514d44;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  
+  .date {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .status {
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    gap: 15px;
+  
+  }
+  
+  .sum {
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    gap: 15px;
+  }
+  

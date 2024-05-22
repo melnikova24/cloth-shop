@@ -62,17 +62,17 @@ export async function refresh (refreshToken) {
 
     const userData = validateRefreshToken(refreshToken);
     const tokenFromDB = await findToken(refreshToken);
-    console.log( userData, tokenFromDB);
+    console.error( userData, tokenFromDB);
     if (!userData || !tokenFromDB) {
         throw ApiError.UnauthorizedError();
     }
 
     const user = await userModelM.findById(userData._id);
-    console.log( user, 'user');
+    console.error( user, 'user');
     if (!user) {
         throw ApiError.UnauthorizedError();
     }
-    console.log( 3, '434');
+    console.error( 3, '434');
     const userDTO = new UserDTO(user);
     const tokens = generateTokens({...userDTO});
     await saveToken(userDTO._id.toString(), tokens.refreshToken);

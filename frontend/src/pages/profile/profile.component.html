@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<section class="profile">
+    <div class="container">
+      <h1 class="title">Личный кабинет</h1>
+      <div class="orders">
+        <div class="order" *ngFor="let order of orders | async">
+          <span class="date">Заказ от {{getDate(order.orderDate)}}</span>
+          <div class="items">
+            <div class="item" *ngFor="let item of order.products">
+              <img [src]="item?.selectedVariant?.photos?.[0]" alt="" class="item-img">
+            </div>
+          </div>
+          <span class="status">
+            <span>Статус заказа:</span>
+            <span>{{order.status}}</span>
+          </span>
+          <span class="sum">
+            <span>Сумма заказа:</span>
+            <span>{{order.sumOfCart}} р.</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  

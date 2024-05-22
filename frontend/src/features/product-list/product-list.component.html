@@ -5,7 +5,7 @@
     <div class="product-flex">
       <span class="product-price">{{product.variants[0].price}} р.</span>
       <div class="product-btns">
-        <img src="assets/icons/cart.svg" (click)="addToCart(product); $event.stopPropagation();" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">
+<!--        <img src="assets/icons/cart.svg" (click)="addToCart(product); $event.stopPropagation();" alt="корзина" [ngClass]="{ 'active': product?.inCart, 'product-btn': true }">-->
         <img src="assets/icons/fav.svg" (click)="addToFavorite(product); $event.stopPropagation();" alt="избранное"  [ngClass]="{ 'active': isFavorite(product), 'product-btn': true }">
       </div>
     </div>

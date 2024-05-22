@@ -39,11 +39,12 @@ export class ProductListComponent  {
   addToCart(product: Product) {
     const filtered = this.cartItems.products.filter(item => item !== product._id)
     if (filtered.length === this.cartItems.products.length) {
-      this.cartService.editCart([...this.cartItems.products, product._id]).subscribe(cartItems => {
+      // @ts-ignore
+      this.cartService.editCart([...this.cartItems.products, product._id], [...this.cartItems.productsList, product]).subscribe(cartItems => {
         this.cartItems = {...cartItems, products: [...this.cartItems.products, product._id]}
       })
     } else {
-      this.cartService.editCart([...filtered]).subscribe(cartItems => {
+      this.cartService.editCart([...filtered], [...this.cartItems.productsList?.filter(item => item._id !== product._id)]).subscribe(cartItems => {
         this.cartItems = {...cartItems, products: [...cartItems.products]}
       })
     }

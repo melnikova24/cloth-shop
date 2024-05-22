@@ -8,6 +8,7 @@ export type CartType = {
   products: string[]
   _id: string
   personId: string
+  productsList?: Product[]
 }
 
 @Injectable({
@@ -21,8 +22,8 @@ export class CartService {
     return cart ? cart : from([]);
   }
 
-  editCart(products: string[]): Observable<CartType> {
-    const cart = this.http.post<CartType>(BASE_URL+'/cart', products);
+  editCart(products: string[], productsList?: Product[]): Observable<CartType> {
+    const cart = this.http.post<CartType>(BASE_URL+'/cart', {products, productsList});
     return cart ? cart : from([]);
   }
 }

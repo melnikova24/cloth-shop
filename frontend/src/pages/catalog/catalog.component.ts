@@ -98,15 +98,14 @@ export class CatalogComponent implements OnInit, OnDestroy {
       })
     ).subscribe((products) => {
       // Map products and update inCart status
+      this.isLoading = false;
       this.products = products.map(product => ({
         ...product,
         previewPhoto: product.variants[0].photos[0],
         inCart: this.cartItems.products.some(cartItem => cartItem === product._id)
       }));
-
-      // Set loading state to false after fetching products
-      this.isLoading = false;
-      setTimeout(() => this.cd.detectChanges(), 0); // Detect changes after a short delay
+      // Update products array and detect changes
+      this.cd.detectChanges();
     });
   }
 

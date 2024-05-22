@@ -28,8 +28,6 @@ export class ProductEditFormComponent implements OnInit {
   @Input() product!: Product | null;
   selectedCategory!: ICategory | null;
   selectedSubtype: string[] = [];
-
-  types!: Record<string, string>[];
   selectedImages!: FileList | null;
   imageUrls: string[][] = [];
   formGroupProduct!: FormGroup;

@@ -11,21 +11,18 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: [process.env.ORIGIN, 'http://localhost:4200', 'http://localhost:4200/'],
-    // origin: '*',
+    // origin: [process.env.ORIGIN, 'http://localhost:4200', 'http://localhost:4200/', 'https://sakina-jet.vercel.app/', 'https://sakina-jet.vercel.app'],
+    origin: 'https://sakina-jet.vercel.app',
     methods: 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }
 
+
 app.use(cors(corsOptions));
+
 app.use(express.json({limit: '250mb'}));
 app.use(cookieParser(process.env.COOKIE_SECRET));
-// app.use((req, res, next) => {
-//     console.log(req.method, req.url);
-//     next();
-// })
-// app.use('/api', router);
 app.use(router);
 app.use(errorMiddleware);
 

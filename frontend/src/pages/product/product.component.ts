@@ -77,15 +77,21 @@ export class ProductComponent implements OnInit {
     this.product = {...this.product, inFavorite: this.favoritesService.inFavorites(product)}
   }
 
-  addToCart(product: Product) {
-    const filtered = this.cartItems.products.filter(item => item !== product._id)
+  addToCart(produc: Product) {
+    const filtered = this.cartItems.products.filter(item => item !== produc._id)
+    const product: Product = {
+      ...produc,
+      selectedVariant: this.selectedVariant
+    }
     if (filtered.length === this.cartItems.products.length) {
-      this.cartService.editCart([...this.cartItems.products, product._id]).subscribe(cartItems => {
+      // @ts-ignore
+      this.cartService.editCart([...this.cartItems.products, product._id], [...this.cartItems?.productsList, product]).subscribe(cartItems => {
         this.cartItems = {...cartItems, products: [...this.cartItems.products, product._id]}
         this.product = {...this.product, inCart: true}
       })
     } else {
-      this.cartService.editCart([...filtered]).subscribe(cartItems => {
+      // @ts-ignore
+      this.cartService.editCart([...filtered], [...this.cartItems?.productsList.filter(item => item._id !== product._id), product]).subscribe(cartItems => {
         this.cartItems = {...cartItems, products: [...cartItems.products]}
         this.product = {...this.product, inCart: false}
       })

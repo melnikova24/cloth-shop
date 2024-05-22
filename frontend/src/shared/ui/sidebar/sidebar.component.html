@@ -24,7 +24,7 @@
     <div class="sidebar-item">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn " id="dropdownBasic2" ngbDropdownToggle>
-            <span *ngIf="!filtersForm.get('sizes')?.value">Цвет</span>
+            <span *ngIf="!filtersForm.get('sizes')?.value">Размер</span>
             <span *ngIf="filtersForm.get('sizes')?.value">{{filtersForm.get('sizes')?.value}}</span>
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
@@ -36,7 +36,7 @@
     <div class="sidebar-item" >
       <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn " id="dropdownBasic3" ngbDropdownToggle>
-            <span *ngIf="!filtersForm.get('colors')?.value">Размер</span>
+            <span *ngIf="!filtersForm.get('colors')?.value">Цвет</span>
             <span *ngIf="filtersForm.get('colors')?.value">{{filtersForm.get('colors')?.value}}</span>
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
