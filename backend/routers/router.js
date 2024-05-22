@@ -20,7 +20,7 @@ import {
 } from "../controllers/productController.js";
 import {postCart, getCart} from "../controllers/cartController.js";
 import {getSubtypes} from "../controllers/subtypeController.js";
-
+import {getOrders, patchOrder, postOrder} from "../controllers/orderController.js";
 
 
 const router = Router();
@@ -62,5 +62,10 @@ router.get('/cart', authMiddleware, getCart);
 //Тип одежды
 router.get('/subtypes', getSubtypes);
 //Тип одежды
+//Заказ
+router.get('/orders',authMiddleware, getOrders);
+router.post('/orders',authMiddleware, postOrder);
+router.patch('/orders',authMiddleware, patchOrder);
+//Заказ
 
 export {router};
