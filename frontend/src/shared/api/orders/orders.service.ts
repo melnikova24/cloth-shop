@@ -23,4 +23,8 @@ export class OrdersService {
   editOrder(order: IOrder) {
     return this.httpClient.patch<IOrder>(BASE_URL+'/orders/' + order._id, order);
   }
+
+  allOrders() {
+    return this.httpClient.get<{orders: IOrder[], user: {name: string, email: string} }>(BASE_URL+'/allorders');
+  }
 }
