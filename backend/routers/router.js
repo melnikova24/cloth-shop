@@ -66,7 +66,7 @@ router.get('/subtypes', getSubtypes);
 
 //Заказ
 router.get('/orders',authMiddleware, getOrders);
-router.get('/allorders',authMiddleware, getAllOrders);
+router.get('/allorders', getAllOrders);
 router.post('/orders',authMiddleware, postOrder);
 router.patch('/orders/:id',authMiddleware, patchOrder);
 //Заказ

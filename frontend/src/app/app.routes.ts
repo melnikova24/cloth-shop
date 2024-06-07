@@ -13,6 +13,7 @@ import {AboutusComponent} from "../pages/aboutus/aboutus.component";
 import {FaqComponent} from "../pages/faq/faq.component";
 import {RefundComponent} from "../pages/refund/refund.component";
 import {FavoriteComponent} from "../pages/favorite/favorite.component";
+import { PolicyComponent } from '../pages/policy/policy.component';
 
 
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: "about", component: AboutusComponent },
   { path: "faq", component: FaqComponent },
   { path: "refund", component: RefundComponent },
+  { path: 'policy', component: PolicyComponent},
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),

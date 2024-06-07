@@ -13,6 +13,7 @@ const app = express();
 const corsOptions = {
     // origin: [process.env.ORIGIN, 'http://localhost:4200', 'http://localhost:4200/', 'https://sakina-jet.vercel.app/', 'https://sakina-jet.vercel.app'],
     origin: 'https://sakina-jet.vercel.app',
+    // origin: 'http://localhost:4200',
     methods: 'DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true

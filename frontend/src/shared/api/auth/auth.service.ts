@@ -44,8 +44,8 @@ export class AuthService {
               this.router.navigate(['']);
           },
           error: err => {
-              this.storageService.clear();
-              this.isLoggedIn = false;
+              // this.storageService.clear();
+              // this.isLoggedIn = false;
           }
       })
   }

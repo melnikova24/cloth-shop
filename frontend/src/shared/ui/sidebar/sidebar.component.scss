@@ -11,6 +11,11 @@
     align-items: center;
   }
 
+  .dropwow {
+    max-height: 200px;
+    overflow: auto;
+  }
+
   &-input {
     width: 104px;
     margin-top: 3px;

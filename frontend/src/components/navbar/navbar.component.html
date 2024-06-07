@@ -11,7 +11,7 @@
     <div class="nav-icons">
       <img src="../../assets/icons/fav.svg" alt="избранное" class="nav-icon" routerLink="favorite">
       <img src="../../assets/icons/cart.svg" alt="корзина" class="nav-icon" routerLink="cart" >
-      <img src="../../assets/icons/profile.svg" alt="профиль" class="nav-icon" *ngIf="isAuth" routerLink="profile" >
+      <img src="../../assets/icons/profile.svg" alt="профиль" class="nav-icon" routerLink="profile" >
       <img src="../../assets/icons/menu.svg" alt="меню" class="nav-icon2" (click)="toggle()" >
       <img src="../../assets/icons/exit.svg" alt="меню" class="nav-icon" *ngIf="isAuth" (click)="logout()">
     </div>
@@ -25,7 +25,7 @@
       <span routerLink="catalog/boys" class="mobile-link" routerLinkActive="active" (click)="toggle()">Мальчики</span>
       <span routerLink="cart" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Корзина</span>
       <span routerLink="favorite" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Избранное</span>
-      <span routerLink="profile" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAuth" >Профиль</span>
+      <span routerLink="profile" class="mobile-link" routerLinkActive="active" (click)="toggle()" >Профиль</span>
       <span routerLink="admin" class="mobile-link" routerLinkActive="active" (click)="toggle()" *ngIf="isAdmin">Админ</span>
     </div>
     <div class="mobile-bottom" (click)="logout()" *ngIf="isAuth"  >

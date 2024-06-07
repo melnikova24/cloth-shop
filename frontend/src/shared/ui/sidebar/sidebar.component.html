@@ -15,8 +15,8 @@
           <span *ngIf="!filtersForm.get('categoryId')?.value">Категория</span>
           <span *ngIf="filtersForm.get('categoryId')?.value">{{filtersForm.get('categoryId')?.value?.name}}</span>
         </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-          <button type="button" (click)="selectCategory(category)" ngbDropdownItem *ngFor="let category of categories">{{category.name}}</button>
+        <div class="dropwow" ngbDropdownMenu aria-labelledby="dropdownBasic3">
+          <button  type="button" (click)="selectCategory(category)" ngbDropdownItem *ngFor="let category of categories">{{category.name}}</button>
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@
             <span *ngIf="!filtersForm.get('sizes')?.value">Размер</span>
             <span *ngIf="filtersForm.get('sizes')?.value">{{filtersForm.get('sizes')?.value}}</span>
           </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-            <button type="button" (click)="selectSize(size)" ngbDropdownItem *ngFor="let size of filters.sizes">{{size}}</button>
+          <div class="dropwow" ngbDropdownMenu aria-labelledby="dropdownBasic3">
+            <button  type="button" (click)="selectSize(size)" ngbDropdownItem *ngFor="let size of filters.sizes">{{size}}</button>
           </div>
         </div>
     </div>
@@ -39,8 +39,8 @@
             <span *ngIf="!filtersForm.get('colors')?.value">Цвет</span>
             <span *ngIf="filtersForm.get('colors')?.value">{{filtersForm.get('colors')?.value}}</span>
           </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-            <button type="button" (click)="selectColor(color)" ngbDropdownItem *ngFor="let color of filters.colors">{{color}}</button>
+          <div class="dropwow" ngbDropdownMenu aria-labelledby="dropdownBasic3">
+            <button  type="button" (click)="selectColor(color)" ngbDropdownItem *ngFor="let color of filters.colors">{{color}}</button>
           </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <div class="main">
-    <table class="table table-striped">
+    <span *ngIf="isLoading" class="loader">Загрузка...</span>
+    <table class="table table-striped" *ngIf="!isLoading">
       <thead>
       <tr>
         <th scope="col">Заказчик</th>
@@ -12,10 +13,10 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let order of orders;">
+      <tr *ngFor="let order of orders;" >
         <td>{{ order.user?.name }}</td>
         <td>{{ order.status }}</td>
-        <td>{{ order.sumOfCart }}</td>
+        <td>{{ order.sumOfCart }} ₽ </td>
         <td><span *ngFor="let product of order.products">{{product.name}} <br></span></td>
         <td class="overflow-hidden">
           <div ngbDropdown container="body" >
@@ -29,7 +30,7 @@
       </tbody>
     </table>
   </div>
-  
+
   <ng-template #editcontent let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title2">Редактирование</h4>
@@ -42,4 +43,3 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Закрыть</button>
     </div>
   </ng-template>
-  

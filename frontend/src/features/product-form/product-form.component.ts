@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgbDropdown, NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
-import {AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {CategoriesService, ICategory, Product} from "../../shared/api";
 import {Observable} from "rxjs";
 import {SubtypeService} from "../../shared/api/subtypes";
@@ -90,8 +90,8 @@ export class ProductFormComponent implements OnInit {
       categoryId: [''],
       subTypeId: [''],
       description: [''],
-      name: [''],
-      variants: this.fb.array([]) // Initialize variants as FormArray
+      name: ['', Validators.required],
+      variants: this.fb.array([], Validators.required) // Initialize variants as FormArray
     });
     this.subTypeService.getSubtypes().subscribe(data => {
       this.subtypes = Object.entries(data);
@@ -106,14 +106,23 @@ export class ProductFormComponent implements OnInit {
 
   newVariant(): FormGroup {
     return this.fb.group({
-      size: [''],
-      color: [''],
-      price: [''],
-      photos: ['']
+      size: ['', Validators.required],
+      color: ['', Validators.required],
+      price: ['', [Validators.required, Validators.min(0)]],
+      photos: ['', Validators.required]
     });
   }
 
   submit() {
+    console.log(this.formGroupProduct)
+    if (
+      !this.formGroupProduct || this.formGroupProduct.invalid
+    || !this.selectedCategory || !this.selectedSubtype
+    ) {
+      alert('Пожалуйста, заполните все обязательные поля');
+      return;
+    }
+
     const productVariants = this.formGroupProduct.value.variants.map((variant: any, index: number) => ({
       ...variant,
       photos: this.imageUrls[index]

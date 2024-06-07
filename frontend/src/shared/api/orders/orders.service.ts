@@ -25,6 +25,6 @@ export class OrdersService {
   }
 
   allOrders() {
-    return this.httpClient.get<{orders: IOrder[], user: {name: string, email: string} }>(BASE_URL+'/allorders');
+    return this.httpClient.get<IOrder[]>(BASE_URL+'/allorders');
   }
 }

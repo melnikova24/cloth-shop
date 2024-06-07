@@ -1,6 +1,7 @@
 <section class="section">
   <div class="container">
-    <div class="product">
+    <span class="loader" *ngIf="isLoading">Загрузка...</span>
+    <div class="product" *ngIf="!isLoading">
       <div class="carousel">
         <ngb-carousel #myCarousel="ngbCarousel">
           <ng-container *ngFor="let image of selectedVariant.photos;let i = index">

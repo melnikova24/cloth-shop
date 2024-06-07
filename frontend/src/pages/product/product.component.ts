@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
   colors!: string[]
   sizes!: string[]
   cartItems: CartType = {} as CartType;
-
+  isLoading = true;
   selectedVariant!: VariantProduct;
   selectedPhoto!: string | null;
   selectedColor!: string | null;
@@ -43,6 +43,7 @@ export class ProductComponent implements OnInit {
   private modalService = inject(NgbModal);
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
+    this.isLoading = true;
     this.cartService.getCartItems('main').pipe(
       catchError(error => {
         console.error('Error fetching cart items:', error);
@@ -51,8 +52,10 @@ export class ProductComponent implements OnInit {
       map(cartItems => cartItems ? cartItems : null) // Возвращаем null, если cartItems пустой
     ).subscribe(cartItems => {
       // if (cartItems !== null) {
+
         this.productService.getProduct(id).subscribe(data => {
           // @ts-ignore
+
           this.cartItems = cartItems !== null ? cartItems : {products: []};
           const inCart = cartItems?.products.includes(data._id);
           this.product = {...data, inCart, inFavorite: this.favoritesService.inFavorites(data)};
@@ -60,6 +63,7 @@ export class ProductComponent implements OnInit {
           this.colors = [...new Set(data.variants.map(variant => variant.color))];
           this.sizes = [...new Set(data.variants.map(variant => variant.size))];
           this.selectedColor = this.colors[0];
+          this.isLoading = false;
         });
       // } else {
       //   // Обработка случая, когда cartItems равен null

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {AuthService} from "../../shared/api/auth";
 import {NgClass, NgIf} from "@angular/common";
 
@@ -13,7 +13,7 @@ import {NgClass, NgIf} from "@angular/common";
 })
 export class NavbarComponent {
   isOpen = false
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   toggle() {
@@ -21,7 +21,11 @@ export class NavbarComponent {
   }
 
   logout() {
-    const response = this.authService.logout()
+    const response = this.authService.logout().subscribe(
+      () => {
+        this.router.navigate(['/'])
+      }
+    )
   }
 
   get isAdmin () {

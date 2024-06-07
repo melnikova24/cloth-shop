@@ -1,7 +1,7 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CategoriesService, ICategory, Product, VariantProduct} from "../../shared/api";
-import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {QueryParamsService} from "../../shared/services/query-params.service";
 import {ISubtype, SubtypeService} from "../../shared/api/subtypes";
 import {ProductsService} from "../../shared/api/products/products.service";
@@ -51,16 +51,16 @@ export class ProductEditFormComponent implements OnInit {
     this.selectedCategory = this.product.category;
     this.formGroupProduct = this.fb.group({
       _id: [this.product?._id || ''],
-      categoryId: [this.selectedCategory?._id || ''],
+      categoryId: [this.selectedCategory?._id || '' ],
       subTypeId: [this.product?.subTypeId || ''],
       description: [this.product?.description || ''],
-      name: [this.product?.name || ''],
+      name: [this.product?.name || '' , Validators.required],
       variants: this.fb.array(this.product?.variants.map(variant => this.fb.group({
         size: [variant.size],
         color: [variant.color],
         price: [variant.price],
         photos: [variant.photos]
-      })) || []) // Initialize variants as FormArray
+      })) || [], Validators.required) // Initialize variants as FormArray
     });
     this.imageUrls = this.product?.variants.map((variant) => [...variant.photos]) || [];
     this.subTypeService.getSubtypes().subscribe(data => {
@@ -81,6 +81,21 @@ export class ProductEditFormComponent implements OnInit {
 
   submit() {
     console.log(this.formGroupProduct.value, this.selectedSubtype)
+    if (
+      !this.formGroupProduct || this.formGroupProduct.invalid
+      || !this.selectedCategory || !this.selectedSubtype
+    ) {
+      alert('Пожалуйста, заполните все обязательные поля');
+      return;
+    }
+
+    this.formGroupProduct.value.variants.forEach((variant: VariantProduct, index: number) => {
+      if (variant.photos.length === 0) {
+        alert('Пожалуйста, заполните все обязательные поля');
+        return
+      }
+    })
+
     const productVariants = this.formGroupProduct.value.variants.map((variant: any, index: number) => ({
       ...variant,
       photos: this.imageUrls[index]
@@ -132,10 +147,10 @@ export class ProductEditFormComponent implements OnInit {
 
   newVariant(): FormGroup {
     return this.fb.group({
-      size: [''],
-      color: [''],
-      price: [''],
-      photos: ['']
+      size: ['', Validators.required],
+      color: ['', Validators.required],
+      price: ['', Validators.required],
+      photos: ['', Validators.required]
     });
   }
 

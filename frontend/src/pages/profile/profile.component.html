@@ -1,7 +1,8 @@
 <section class="profile">
     <div class="container">
       <h1 class="title">Личный кабинет</h1>
-      <div class="orders">
+      <span *ngIf="isLoading" class="loader">Загрузка...</span>
+      <div class="orders" >
         <div class="order" *ngFor="let order of orders | async">
           <span class="date">Заказ от {{getDate(order.orderDate)}}</span>
           <div class="items">
@@ -21,4 +22,3 @@
       </div>
     </div>
   </section>
-  

@@ -23,6 +23,7 @@ import {OrderEditFormComponent} from "../../../../features/order-edit-form/order
 export class OrdersComponent  implements OnInit {
   orders!: IOrder[];
   selectedOrder!: IOrder | null;
+  isLoading = false;
   subscription!: Subscription;
   constructor(private ordersService: OrdersService, private cd: ChangeDetectorRef) { }
   private modalService = inject(NgbModal);
@@ -39,15 +40,17 @@ export class OrdersComponent  implements OnInit {
 
 
   getOrders() {
+    this.isLoading = true;
     this.subscription = this.ordersService
       .allOrders()
       .subscribe(
         orders => {
           console.log(orders)
-          this.orders = orders.orders
+          this.orders = orders
           this.cd.detectChanges()
+          this.isLoading = false
         }
-      );
+      )
   }
 
   ngOnDestroy() {
