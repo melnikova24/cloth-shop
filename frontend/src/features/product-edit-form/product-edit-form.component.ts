@@ -150,7 +150,7 @@ export class ProductEditFormComponent implements OnInit {
       size: ['', Validators.required],
       color: ['', Validators.required],
       price: ['', Validators.required],
-      photos: ['', Validators.required]
+      photos: ['']
     });
   }
 

@@ -109,7 +109,7 @@ export class ProductFormComponent implements OnInit {
       size: ['', Validators.required],
       color: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
-      photos: ['', Validators.required]
+      photos: ['']
     });
   }
 
