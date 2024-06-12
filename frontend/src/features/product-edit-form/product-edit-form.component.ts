@@ -80,7 +80,7 @@ export class ProductEditFormComponent implements OnInit {
 
 
   submit() {
-    console.log(this.formGroupProduct.value, this.selectedSubtype)
+    console.log(this.formGroupProduct.value, this.selectedSubtype, this.selectedCategory, this.formGroupProduct)
     if (
       !this.formGroupProduct || this.formGroupProduct.invalid
       || !this.selectedCategory || !this.selectedSubtype
