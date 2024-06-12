@@ -80,21 +80,21 @@ export class ProductEditFormComponent implements OnInit {
 
 
   submit() {
-    console.log(this.formGroupProduct.value, this.selectedSubtype, this.selectedCategory, this.formGroupProduct)
+    console.log(this.formGroupProduct.value, this.selectedSubtype, this.selectedCategory, this.formGroupProduct, this.formGroupProduct.errors)
     if (
-      !this.formGroupProduct || this.formGroupProduct.invalid
-      || !this.selectedCategory || !this.selectedSubtype
+
+      !this.selectedCategory || !this.selectedSubtype
     ) {
       alert('Пожалуйста, заполните все обязательные поля');
       return;
     }
 
-    this.formGroupProduct.value.variants.forEach((variant: VariantProduct, index: number) => {
-      if (variant.photos.length === 0) {
-        alert('Пожалуйста, заполните все обязательные поля');
-        return
-      }
-    })
+    // this.formGroupProduct.value.variants.forEach((variant: VariantProduct, index: number) => {
+    //   if (variant.photos.length === 0) {
+    //     alert('Пожалуйста, заполните все обязательные поля');
+    //     return
+    //   }
+    // })
 
     const productVariants = this.formGroupProduct.value.variants.map((variant: any, index: number) => ({
       ...variant,
@@ -168,7 +168,7 @@ export class ProductEditFormComponent implements OnInit {
   upload(index: number): void {
     if (this.selectedImages) {
       this.uploadFiles(this.selectedImages, index);
-      this.selectedImages = null;
+      // this.selectedImages = null;
     }
   }
 

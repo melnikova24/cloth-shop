@@ -48,7 +48,7 @@ export class ProductFormComponent implements OnInit {
   upload(index: number): void {
     if (this.selectedImages) {
       this.uploadFiles(this.selectedImages, index);
-      this.selectedImages = null;
+      // this.selectedImages = null;
     }
   }
 
@@ -115,9 +115,9 @@ export class ProductFormComponent implements OnInit {
 
   submit() {
     // console.log(this.formGroupProduct)
-    console.log(this.formGroupProduct.value, this.selectedSubtype, this.selectedCategory, this.formGroupProduct)
+    console.log(this.formGroupProduct.value, this.selectedSubtype, this.selectedCategory, this.formGroupProduct, this.formGroupProduct.errors)
     if (
-      !this.formGroupProduct || this.formGroupProduct.invalid
+     this.formGroupProduct.invalid
     || !this.selectedCategory || !this.selectedSubtype
     ) {
       alert('Пожалуйста, заполните все обязательные поля');
