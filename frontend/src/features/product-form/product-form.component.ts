@@ -138,7 +138,7 @@ export class ProductFormComponent implements OnInit {
         alert('Успешно')
         this.AddProductEmit(data)
         this.formGroupProduct.reset();
-        this.imageUrls = [];
+        // this.imageUrls = [];
         this.formGroupProduct.controls['variants'].reset();
         this.closeModalEmit()
       },
