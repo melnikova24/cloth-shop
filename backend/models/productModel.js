@@ -15,6 +15,7 @@ export const productModel = new mongoose.Schema({
     description: { type: String },
     variants: [VariantSchema],
     selectedVariant: { type: VariantSchema }
-})
+
+}, { timestamps: true });
 
 export const productModelM = mongoose.model("Product", productModel);

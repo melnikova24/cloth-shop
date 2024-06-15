@@ -1,6 +1,8 @@
 // export const BASE_URL = 'https://backend-lyart-zeta.vercel.app'
 // export const BASE_URL = 'http://localhost:5000'
-export const BASE_URL = 'https://sakina.onrender.com'
+// export const BASE_URL = 'https://sakina.onrender.com'
+export const BASE_URL = 'https://sakina-1.onrender.com'
+
 // export const BASE_URL = 'https://backend-iota-cyan.vercel.app'
 export const SIZES = [
   'XS',
