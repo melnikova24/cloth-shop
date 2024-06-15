@@ -56,6 +56,8 @@
 
     .dropdown-menu {
       width: 100%;
+      overflow-y: scroll;
+    height: 150px;
     }
   }
 
@@ -251,7 +253,6 @@
     }
 
     &-sidebar {
-      overflow: hidden;
       padding: 0;
 
       &-input {
