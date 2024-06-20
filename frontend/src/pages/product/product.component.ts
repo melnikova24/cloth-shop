@@ -114,5 +114,6 @@ export class ProductComponent implements OnInit {
       .filter(variant => variant.size === size)
       .filter(item => item.color === this.selectedColor)
     this.selectedColor = isThereElem[0]?.color || null
+    this.selectedVariant = isThereElem[0]
   }
 }
